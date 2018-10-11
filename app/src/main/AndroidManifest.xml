@@ -16,6 +16,15 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".LoginActivity" />
+        <activity android:name=".CreateUserActivity" />
+        <activity android:name=".SettingsActivity" />
+        <activity android:name=".SoundActivity" />
+        <activity android:name=".PictureActivity" />
+        <activity android:name=".MindfulnessActivity" />
+        <activity android:name=".VideoActivity" />
+        <activity android:name=".MovementActivity" />
+        <activity android:name=".MyStressFreeActivity"></activity>
     </application>
 
 </manifest>
