@@ -31,6 +31,7 @@ public class MainActivity extends AppCompatActivity {
     {
         int i = 1+1;
     }
+    private void test2() {int k = 1+4;}
 
 
 }
