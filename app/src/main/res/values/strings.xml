@@ -1,3 +1,11 @@
 <resources>
     <string name="app_name">StressFree</string>
+    <string name="Køn">Køn</string>
+    <string name="Navn">Navn</string>
+    <string name="Kodeord">Kodeord</string>
+    <string name="Gentag_kodeord">Gentag kodeord</string>
+    <string name="Mand">Mand</string>
+    <string name="Kvinde" >Kvinde</string>
+    <string name="Email">E-mail</string>
+    <string name="Fødselsdato">Fødselsdato</string>
 </resources>

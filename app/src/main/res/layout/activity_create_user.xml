@@ -14,8 +14,8 @@
         android:layout_marginLeft="8dp"
         android:layout_marginTop="16dp"
         android:ems="10"
+        android:hint="@string/Navn"
         android:inputType="textPersonName"
-        android:text="Name"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -27,8 +27,8 @@
         android:layout_marginLeft="8dp"
         android:layout_marginTop="8dp"
         android:ems="10"
-        android:inputType="textPersonName"
-        android:text="G-mail"
+        android:hint="@string/Email"
+        android:inputType="textEmailAddress"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editName" />
 
@@ -40,8 +40,8 @@
         android:layout_marginLeft="8dp"
         android:layout_marginTop="8dp"
         android:ems="10"
-        android:inputType="textPersonName"
-        android:text="Password"
+        android:hint="@string/Kodeord"
+        android:inputType="textPassword"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editGmail" />
 
@@ -53,8 +53,9 @@
         android:layout_marginLeft="8dp"
         android:layout_marginTop="8dp"
         android:ems="10"
-        android:inputType="textPersonName"
-        android:text="Password"
+        android:hint="@string/Gentag_kodeord"
+        android:inputType="textPassword"
+        android:selectAllOnFocus="false"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editPassword" />
 
@@ -65,13 +66,14 @@
         android:layout_marginStart="12dp"
         android:layout_marginLeft="12dp"
         android:layout_marginTop="16dp"
-        android:text="Gender"
+        android:text="@string/Køn"
         android:textAppearance="@style/TextAppearance.AppCompat"
         android:textSize="18dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editRePassword" />
 
     <RadioGroup
+        android:id="@+id/radioGroup"
         android:layout_width="146dp"
         android:layout_height="73dp"
         android:layout_marginStart="8dp"
@@ -85,26 +87,32 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="Male" />
+            android:text="@string/Mand" />
 
         <RadioButton
             android:id="@+id/radioButtonFemale"
-            android:layout_width="250dp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="Female" />
+            android:text="@string/Kvinde" />
     </RadioGroup>
 
-    <DatePicker
-        android:id="@+id/Datepicker"
-        android:layout_width="221dp"
-        android:layout_height="98dp"
+    <EditText
+        android:id="@+id/editBirthday"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginLeft="8dp"
-        android:layout_marginBottom="8dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent">
+        android:layout_marginTop="8dp"
+        android:clickable="true"
+        android:editable="false"
+        android:ems="10"
+        android:focusable="false"
+        android:hint="@string/Fødselsdato"
+        android:inputType="text|datetime|date"
+        android:longClickable="false"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/radioGroup" />
 
-    </DatePicker>
 
 </android.support.constraint.ConstraintLayout>
