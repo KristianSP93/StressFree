@@ -1,13 +1,15 @@
-package com.example.kristian.stressfree;
+package com.example.kristian.stressfree.Views;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
-public class PictureActivity extends AppCompatActivity {
+import com.example.kristian.stressfree.R;
+
+public class MovementActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_picture);
+        setContentView(R.layout.activity_movement);
     }
 }

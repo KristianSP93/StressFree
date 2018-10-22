@@ -9,22 +9,22 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".LoginActivity">
+        <activity android:name=".Views.LoginActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".CreateUserActivity" />
-        <activity android:name=".MainActivity" />
-        <activity android:name=".SettingsActivity" />
-        <activity android:name=".SoundActivity" />
-        <activity android:name=".PictureActivity" />
-        <activity android:name=".MindfulnessActivity" />
-        <activity android:name=".VideoActivity" />
-        <activity android:name=".MovementActivity" />
-        <activity android:name=".MyStressFreeActivity"></activity>
+        <activity android:name=".Views.CreateUserActivity" />
+        <activity android:name=".Views.MainActivity" />
+        <activity android:name=".Views.SettingsActivity" />
+        <activity android:name=".Views.SoundActivity" />
+        <activity android:name=".Views.PictureActivity" />
+        <activity android:name=".Views.MindfulnessActivity" />
+        <activity android:name=".Views.VideoActivity" />
+        <activity android:name=".Views.MovementActivity" />
+        <activity android:name=".Views.MyStressFreeActivity"></activity>
     </application>
 
 </manifest>

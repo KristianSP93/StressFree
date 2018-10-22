@@ -1,7 +1,9 @@
-package com.example.kristian.stressfree;
+package com.example.kristian.stressfree.Views;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+
+import com.example.kristian.stressfree.R;
 
 public class SettingsActivity extends AppCompatActivity {
 
@@ -10,4 +12,6 @@ public class SettingsActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_settings);
     }
+
+
 }
