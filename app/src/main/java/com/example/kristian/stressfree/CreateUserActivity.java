@@ -3,13 +3,17 @@ package com.example.kristian.stressfree;
 import android.app.Activity;
 import android.app.DatePickerDialog;
 import android.content.Context;
+import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
+import android.widget.RadioGroup;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -18,27 +22,47 @@ import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
-import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.TimeZone;
 
 public class CreateUserActivity extends AppCompatActivity {
     private FirebaseAuth mAuth;
-    private String CREATEUSERACTIVITY = "Login  Activity";
-
-
-
+    private String CREATEUSERACTIVITY = "CREATE USER ACTIVITY";
+    MyEditTextDatePicker datepicker;
+    TextView name;
+    TextView email;
+    TextView password1;
+    TextView password2;
+    RadioGroup gender;
+    TextView birthday;
+    Button createUser;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_create_user);
         mAuth = FirebaseAuth.getInstance();
-        MyEditTextDatePicker mydp = new MyEditTextDatePicker(CreateUserActivity.this, R.id.editBirthday);
+        datepicker = new MyEditTextDatePicker(CreateUserActivity.this, R.id.editBirthday);
+        name = findViewById(R.id.editName);
+        email = findViewById(R.id.editEmail);
+        password1 = findViewById(R.id.editPassword);
+        password2 = findViewById(R.id.editRePassword);
+        createUser = findViewById(R.id.btCreate);
+
+
+        createUser.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view) {
+                createAccount(password1.toString(),email.toString());
+                finish();
+            }
+        });
+
     }
 
-    public void updateUI(FirebaseUser user){
-
+    public void succesfulLogin(FirebaseUser user){
+        Toast.makeText(CreateUserActivity.this, "Log ind succesfuld",
+                Toast.LENGTH_SHORT).show();
     }
 
     public void createAccount (String email, String password){
@@ -50,13 +74,12 @@ public class CreateUserActivity extends AppCompatActivity {
                             // Sign in success, update UI with the signed-in user's information
                             Log.d(CREATEUSERACTIVITY, "createUserWithEmail:success");
                             FirebaseUser user = mAuth.getCurrentUser();
-                            updateUI(user);
+                            succesfulLogin(user);
                         } else {
                             // If sign in fails, display a message to the user.
                             Log.w(CREATEUSERACTIVITY, "createUserWithEmail:failure", task.getException());
                             Toast.makeText(CreateUserActivity.this, "Authentication failed.",
                                     Toast.LENGTH_SHORT).show();
-                            updateUI(null);
                         }
 
                         // ...

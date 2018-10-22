@@ -8,4 +8,7 @@
     <string name="Kvinde" >Kvinde</string>
     <string name="Email">E-mail</string>
     <string name="Fødselsdato">Fødselsdato</string>
+    <string name="Login">Log ind</string>
+    <string name="opretBruger">Opret Bruger</string>
+    <string name="Opret_bruger">Opret Bruger</string>
 </resources>
