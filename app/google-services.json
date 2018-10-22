@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "61047398270",
+    "firebase_url": "https://stressfree-d7977.firebaseio.com",
+    "project_id": "stressfree-d7977",
+    "storage_bucket": "stressfree-d7977.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:61047398270:android:35a5a4857afef4a0",
+        "android_client_info": {
+          "package_name": "com.example.kristian.stressfree"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "61047398270-014k2q9o05khc2ackdoo4t9o9qj9u9dm.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.kristian.stressfree",
+            "certificate_hash": "53bf6c431cefe577707fffc993cae3bbc734c227"
+          }
+        },
+        {
+          "client_id": "61047398270-tl6vjimiju21ga43p9pujtvi5e2usm5p.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCFExplV_cBVNa79NIhSQOI1fhaUWhAcB4"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "61047398270-tl6vjimiju21ga43p9pujtvi5e2usm5p.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
