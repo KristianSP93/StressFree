@@ -11,4 +11,15 @@
     <string name="Login">Log ind</string>
     <string name="opretBruger">Opret Bruger</string>
     <string name="Opret_bruger">Opret Bruger</string>
+
+    <string name="Mindfulness">Mindfulness</string>
+    <string name="Billeder">Billeder</string>
+    <string name="Lyd">Lyd</string>
+    <string name="Videoer">Videoer</string>
+    <string name="Bevægelse">Bevægelse</string>
+    <string name="MitStressFri">MitStressFri</string>
+
+
+
+
 </resources>
