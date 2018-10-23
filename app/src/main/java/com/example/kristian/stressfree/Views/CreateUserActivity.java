@@ -29,14 +29,14 @@ import java.util.TimeZone;
 public class CreateUserActivity extends AppCompatActivity {
     private FirebaseAuth mAuth;
     private String CREATEUSERACTIVITY = "CREATE USER ACTIVITY";
-    MyEditTextDatePicker datepicker;
-    TextView name;
-    TextView email;
-    TextView password1;
-    TextView password2;
-    RadioGroup gender;
-    TextView birthday;
-    Button createUser;
+    private MyEditTextDatePicker datepicker;
+    private TextView name;
+    private TextView email;
+    private TextView password1;
+    private TextView password2;
+    private RadioGroup gender;
+    private TextView birthday;
+    private Button createUser;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -54,17 +54,25 @@ public class CreateUserActivity extends AppCompatActivity {
         createUser.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                createAccount(email.getText().toString(), password1.getText().toString());
-                //finish();
+                if(checkPassword(password1.getText().toString(), password2.getText().toString())){
+                    createAccount(email.getText().toString(), password1.getText().toString());
+                } else{
+                    Toast.makeText(CreateUserActivity.this, getResources().getString(R.string.EnsKode),
+                            Toast.LENGTH_SHORT).show();
+                }
             }
         });
+    }
+
+    public boolean checkPassword(String p1, String p2){
+        return p1.equals(p2);
+    }
+
+    // Creates the user with all the information from the fields in the acitivity.
+    public void createUser(){
 
     }
 
-    public void successfulLogin(FirebaseUser user) {
-        Toast.makeText(CreateUserActivity.this, "Log ind succesfuld",
-                Toast.LENGTH_SHORT).show();
-    }
 
     public void createAccount(String email, String password) {
         mAuth.createUserWithEmailAndPassword(email, password)
@@ -75,14 +83,15 @@ public class CreateUserActivity extends AppCompatActivity {
                             // Sign in success, update UI with the signed-in user's information
                             Log.d(CREATEUSERACTIVITY, "createUserWithEmail:success");
                             FirebaseUser user = mAuth.getCurrentUser();
-                            //name.setText("Det virker");
-                            successfulLogin(user);
+
+
+
+                            finish();
                         } else {
                             // If sign in fails, display a message to the user.
                             Log.w(CREATEUSERACTIVITY, "createUserWithEmail:failure", task.getException());
-                            Toast.makeText(CreateUserActivity.this, "Authentication failed.",
+                            Toast.makeText(CreateUserActivity.this, getResources().getString(R.string.GodkendelseFejlede),
                                     Toast.LENGTH_SHORT).show();
-                            //name.setText("Det virker ikke");
                         }
                         // ...
                     }

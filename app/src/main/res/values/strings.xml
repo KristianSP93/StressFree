@@ -18,8 +18,8 @@
     <string name="Videoer">Videoer</string>
     <string name="Bevægelse">Bevægelse</string>
     <string name="MitStressFri">MitStressFri</string>
-
-
+    <string name="EnsKode">Kodeord er ikke det samme</string>
+    <string name="GodkendelseFejlede">Der opstod et problem ved oprettelse af bruger. Prøv igen senere.</string>
 
 
 </resources>
