@@ -16,6 +16,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.kristian.stressfree.R;
+import com.example.kristian.stressfree.Utilities.MyEditTextDatePicker;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
@@ -50,22 +51,22 @@ public class CreateUserActivity extends AppCompatActivity {
         createUser = findViewById(R.id.btCreate);
 
 
-        createUser.setOnClickListener(new View.OnClickListener(){
+        createUser.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                createAccount(password1.toString(),email.toString());
-                finish();
+                createAccount(email.getText().toString(), password1.getText().toString());
+                //finish();
             }
         });
 
     }
 
-    public void succesfulLogin(FirebaseUser user){
+    public void successfulLogin(FirebaseUser user) {
         Toast.makeText(CreateUserActivity.this, "Log ind succesfuld",
                 Toast.LENGTH_SHORT).show();
     }
 
-    public void createAccount (String email, String password){
+    public void createAccount(String email, String password) {
         mAuth.createUserWithEmailAndPassword(email, password)
                 .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
                     @Override
@@ -74,64 +75,19 @@ public class CreateUserActivity extends AppCompatActivity {
                             // Sign in success, update UI with the signed-in user's information
                             Log.d(CREATEUSERACTIVITY, "createUserWithEmail:success");
                             FirebaseUser user = mAuth.getCurrentUser();
-                            succesfulLogin(user);
+                            //name.setText("Det virker");
+                            successfulLogin(user);
                         } else {
                             // If sign in fails, display a message to the user.
                             Log.w(CREATEUSERACTIVITY, "createUserWithEmail:failure", task.getException());
                             Toast.makeText(CreateUserActivity.this, "Authentication failed.",
                                     Toast.LENGTH_SHORT).show();
+                            //name.setText("Det virker ikke");
                         }
-
                         // ...
                     }
                 });
     }
-
-
-    // https://stackoverflow.com/questions/14933330/datepicker-how-to-popup-datepicker-when-click-on-edittext
-    // Denne klasse er skrevet af SatanEnglish og rettet af shridutt kothari.
-    public class MyEditTextDatePicker  implements View.OnClickListener, DatePickerDialog.OnDateSetListener {
-        EditText _editText;
-        private int _day;
-        private int _month;
-        private int _birthYear;
-        private Context _context;
-
-        public MyEditTextDatePicker(Context context, int editTextViewID)
-        {
-            Activity act = (Activity)context;
-            this._editText = (EditText)act.findViewById(editTextViewID);
-            this._editText.setOnClickListener(this);
-            this._context = context;
-        }
-
-        @Override
-        public void onDateSet(DatePicker view, int year, int monthOfYear, int dayOfMonth) {
-            _birthYear = year;
-            _month = monthOfYear;
-            _day = dayOfMonth;
-            updateDisplay();
-        }
-        @Override
-        public void onClick(View v) {
-            Calendar calendar = Calendar.getInstance(TimeZone.getDefault());
-
-            DatePickerDialog dialog = new DatePickerDialog(_context, this,
-                    calendar.get(Calendar.YEAR), calendar.get(Calendar.MONTH),
-                    calendar.get(Calendar.DAY_OF_MONTH));
-            dialog.show();
-
-        }
-
-        // updates the date in the birth date EditText
-        private void updateDisplay() {
-
-            _editText.setText(new StringBuilder()
-                    // Month is 0 based so add 1
-                    .append(_day).append("/").append(_month + 1).append("/").append(_birthYear).append(" "));
-        }
-    }
-
 }
 
 
