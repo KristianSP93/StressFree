@@ -1,6 +1,7 @@
 package com.example.kristian.stressfree.Views;
 
 import android.content.Intent;
+import android.os.PersistableBundle;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -21,7 +22,8 @@ import com.google.firebase.auth.FirebaseUser;
 public class LoginActivity extends AppCompatActivity implements LoginPresenter.Context {
 
     private LoginPresenter presenter;
-
+    private static final String STATE_EMAIL = "saveEmail";
+    private static final String STATE_PASSWORD = "savePassword";
     private TextView email;
     private TextView kodeord;
     private Button logind;
@@ -71,6 +73,11 @@ public class LoginActivity extends AppCompatActivity implements LoginPresenter.C
                 presenter.forgotPassword();
             }
         });
+
+        if (savedInstanceState != null) {
+            email.setText(savedInstanceState.getString(STATE_EMAIL, ""));
+            kodeord.setText(savedInstanceState.getString(STATE_PASSWORD, ""));
+        }
     }
 
     @Override
@@ -82,6 +89,7 @@ public class LoginActivity extends AppCompatActivity implements LoginPresenter.C
     }
 
     public void GoMainactivity(FirebaseUser user){
+        kodeord.setText("");
         Intent intent = new Intent(LoginActivity.this, MainActivity.class);
         intent.putExtra("userLogIn",user);
         startActivity(intent);
@@ -110,5 +118,13 @@ public class LoginActivity extends AppCompatActivity implements LoginPresenter.C
 
     public String getMail(){
         return email.getText().toString();
+    }
+
+
+    @Override
+    public void onSaveInstanceState(Bundle outState) {
+        super.onSaveInstanceState(outState);
+        outState.putString(STATE_EMAIL, email.getText().toString());
+        outState.putString(STATE_PASSWORD, kodeord.getText().toString());
     }
 }
