@@ -10,6 +10,7 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.kristian.stressfree.Presenters.LoginPresenter;
 import com.example.kristian.stressfree.R;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
@@ -17,29 +18,35 @@ import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
-public class LoginActivity extends AppCompatActivity {
-    private FirebaseAuth mAuth;
-    private String LOGINACTIVITY = "LOG IN ACTIVITY";
-    TextView email;
-    TextView kodeord;
-    Button logind;
-    Button createUser;
+public class LoginActivity extends AppCompatActivity implements LoginPresenter.Context {
+
+    private LoginPresenter presenter;
+
+    private TextView email;
+    private TextView kodeord;
+    private Button logind;
+    private Button createUser;
+    private Button withoutlogin;
+    private Button forgotpassword;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        presenter = new LoginPresenter(this);
         setContentView(R.layout.activity_login);
-        mAuth = FirebaseAuth.getInstance();
         email = findViewById(R.id.loginMail);
         kodeord = findViewById(R.id.loginKode);
         logind = findViewById(R.id.btLogin);
         createUser = findViewById(R.id.btCreateuser);
+        withoutlogin = findViewById(R.id.btWithoutLogin);
+        forgotpassword = findViewById(R.id.btForgotPassword);
+
 
         logind.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                signin(email.getText().toString(), kodeord.getText().toString());
+                presenter.signin(email.getText().toString(), kodeord.getText().toString());
             }
         });
 
@@ -50,43 +57,58 @@ public class LoginActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
+        withoutlogin.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                presenter.withoutLogin();
+            }
+        });
+
+        forgotpassword.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                presenter.forgotPassword();
+            }
+        });
     }
 
     @Override
     public void onStart() {
         super.onStart();
         // Check if user is signed in (non-null) and update UI accordingly.
-        FirebaseUser currentUser = mAuth.getCurrentUser();
-        updateUI(currentUser);
+        //FirebaseUser currentUser = mAuth.getCurrentUser();
+        //updateUI(currentUser);
     }
 
+    public void GoMainactivity(FirebaseUser user){
+        Intent intent = new Intent(LoginActivity.this, MainActivity.class);
+        intent.putExtra("userLogIn",user);
+        startActivity(intent);
+    }
 
-    public void updateUI(FirebaseUser User) {
-        Toast.makeText(LoginActivity.this, "Authentication succeeded.",
+    public void GoMainactivitWithoutLogin(){
+        Intent intent = new Intent(LoginActivity.this, MainActivity.class);
+        startActivity(intent);
+    }
+
+    public void enterMail(){
+        Toast.makeText(LoginActivity.this, getResources().getString(R.string.Korrektmail),
                 Toast.LENGTH_SHORT).show();
     }
 
-    public void signin(String email, String password) {
-        mAuth.signInWithEmailAndPassword(email, password)
-                .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
-                    @Override
-                    public void onComplete(@NonNull Task<AuthResult> task) {
-                        if (task.isSuccessful()) {
-                            // Sign in success, update UI with the signed-in user's information
-                            Log.d(LOGINACTIVITY, "signInWithEmail:success");
-                            FirebaseUser user = mAuth.getCurrentUser();
 
-                            updateUI(user);
-                        } else {
-                            // If sign in fails, display a message to the user.
-                            Log.w(LOGINACTIVITY, "signInWithEmail:failure", task.getException());
-                            Toast.makeText(LoginActivity.this, "Authentication failed.",
-                                    Toast.LENGTH_SHORT).show();
-                            updateUI(null);
-                        }
+    public void forgotPasswordSucces(){
+        Toast.makeText(LoginActivity.this, getResources().getString(R.string.KodeMailSendt),
+                Toast.LENGTH_SHORT).show();
+    }
 
-                        // ...
-                    }
-                });
+    public void showAuthError(){
+        Toast.makeText(LoginActivity.this, getResources().getString(R.string.ForkertEmailKode),
+                Toast.LENGTH_SHORT).show();
+    }
+
+    public String getMail(){
+        return email.getText().toString();
     }
 }

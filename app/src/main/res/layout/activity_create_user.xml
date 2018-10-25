@@ -59,61 +59,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editPassword" />
 
-    <TextView
-        android:id="@+id/twGender"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="12dp"
-        android:layout_marginLeft="12dp"
-        android:layout_marginTop="16dp"
-        android:text= "@string/Kon"
-        android:textAppearance="@style/TextAppearance.AppCompat"
-        android:textSize="18dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editRePassword" />
-
-    <RadioGroup
-        android:id="@+id/radioGroup"
-        android:layout_width="146dp"
-        android:layout_height="73dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginTop="8dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/twGender">
-
-        <RadioButton
-            android:id="@+id/radioButtonMale"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="@string/Mand" />
-
-        <RadioButton
-            android:id="@+id/radioButtonFemale"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="@string/Kvinde" />
-    </RadioGroup>
-
-    <EditText
-        android:id="@+id/editBirthday"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginTop="8dp"
-        android:clickable="true"
-        android:editable="false"
-        android:ems="10"
-        android:focusable="false"
-        android:hint="@string/Fødselsdato"
-        android:inputType="text|datetime|date"
-        android:longClickable="false"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/radioGroup" />
-
     <Button
         android:id="@+id/btCreate"
         android:layout_width="wrap_content"

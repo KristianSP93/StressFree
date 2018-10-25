@@ -20,6 +20,11 @@
     <string name="MitStressFri">MitStressFri</string>
     <string name="EnsKode">Kodeord er ikke det samme</string>
     <string name="GodkendelseFejlede">Der opstod et problem ved oprettelse af bruger. Prøv igen senere.</string>
+    <string name="UdenLogin">Fortsæt uden login</string>
+    <string name="GlemtKode">Glemt Kode</string>
+    <string name="KodeMailSendt">En mail med instruktioner er blevet sendt til din mail.</string>
+    <string name="ForkertEmailKode">Indtastet E-mail eller kode er forkert</string>
+    <string name="Korrektmail">Indtast korrekt E-mail og prøv igen</string>
 
 
 </resources>
