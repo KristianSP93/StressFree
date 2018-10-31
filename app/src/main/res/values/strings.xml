@@ -25,6 +25,7 @@
     <string name="KodeMailSendt">En mail med instruktioner er blevet sendt til din mail.</string>
     <string name="ForkertEmailKode">Indtastet E-mail eller kode er forkert</string>
     <string name="Korrektmail">Indtast korrekt E-mail og prøv igen</string>
+    <string name="Annuller">Annuller</string>
 
 
 </resources>

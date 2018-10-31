@@ -23,6 +23,14 @@
           }
         },
         {
+          "client_id": "61047398270-bgo9js6v3hksnfq0lfqthboah1s8kl3g.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.kristian.stressfree",
+            "certificate_hash": "edf66836e45de5c6c1b52d7ef2c2f9d3ff57faf4"
+          }
+        },
+        {
           "client_id": "61047398270-tl6vjimiju21ga43p9pujtvi5e2usm5p.apps.googleusercontent.com",
           "client_type": 3
         }
