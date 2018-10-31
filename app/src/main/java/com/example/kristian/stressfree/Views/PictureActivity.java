@@ -118,7 +118,7 @@ public class PictureActivity extends AppCompatActivity {
 
         private Integer[] mThumbIds = {
                 R.drawable.agriculture_bright_clouds_440731,
-                R.drawable.Beautiful_Green_Forest_Background
+                R.drawable.beautiful_green_forest_background
         };
 
 
