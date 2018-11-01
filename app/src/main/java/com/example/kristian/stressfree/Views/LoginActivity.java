@@ -24,12 +24,8 @@ public class LoginActivity extends AppCompatActivity implements LoginPresenter.C
     private LoginPresenter presenter;
     private static final String STATE_EMAIL = "saveEmail";
     private static final String STATE_PASSWORD = "savePassword";
-    private TextView email;
-    private TextView kodeord;
-    private Button logind;
-    private Button createUser;
-    private Button withoutlogin;
-    private Button forgotpassword;
+    private TextView email, kodeord;
+    private Button logind, createUser, withoutlogin, forgotpassword;
 
 
     @Override

@@ -50,7 +50,7 @@
         android:textAppearance="@style/TextAppearance.AppCompat.Display2"
         app:layout_constraintBottom_toTopOf="@+id/btnVideos"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/btMindfulness" />
+        app:layout_constraintStart_toEndOf="@+id/btnMindfulness" />
 
     <Button
         android:id="@+id/btnMovement"
@@ -81,7 +81,7 @@
         app:layout_constraintStart_toStartOf="parent" />
 
     <Button
-        android:id="@+id/btMindfulness"
+        android:id="@+id/btnMindfulness"
         style="@style/Widget.AppCompat.Button.Colored"
         android:layout_width="192dp"
         android:layout_height="134dp"
