@@ -110,12 +110,12 @@ public class CreateUserActivity extends AppCompatActivity implements CreateUserP
 
         });
 
-        if (savedInstanceState != null) {
-            email.setText(savedInstanceState.getString(STATE_EMAIL, ""));
-            password1.setText(savedInstanceState.getString(STATE_PASSWORD1, ""));
-            password2.setText(savedInstanceState.getString(STATE_PASSWORD2, ""));
-            name.setText(savedInstanceState.getString(STATE_NAME, ""));
-        }
+       // if (savedInstanceState != null) {
+        //    email.setText(savedInstanceState.getString(STATE_EMAIL, ""));
+         //   password1.setText(savedInstanceState.getString(STATE_PASSWORD1, ""));
+          //  password2.setText(savedInstanceState.getString(STATE_PASSWORD2, ""));
+           // name.setText(savedInstanceState.getString(STATE_NAME, ""));
+       // }
     }
 
 
@@ -135,14 +135,14 @@ public class CreateUserActivity extends AppCompatActivity implements CreateUserP
         return name.getText().toString();
     }
 
-    @Override
-    protected void onSaveInstanceState(Bundle outState) {
-        super.onSaveInstanceState(outState);
-        outState.putString(STATE_EMAIL, email.getText().toString());
-        outState.putString(STATE_NAME, name.getText().toString());
-        outState.putString(STATE_PASSWORD1, password1.getText().toString());
-        outState.putString(STATE_PASSWORD2, password2.getText().toString());
-    }
+    //@Override
+    //protected void onSaveInstanceState(Bundle outState) {
+       // super.onSaveInstanceState(outState);
+        //outState.putString(STATE_EMAIL, email.getText().toString());
+        //outState.putString(STATE_NAME, name.getText().toString());
+        //outState.putString(STATE_PASSWORD1, password1.getText().toString());
+        //outState.putString(STATE_PASSWORD2, password2.getText().toString());
+    //}
 }
 
 

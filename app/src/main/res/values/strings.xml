@@ -27,5 +27,8 @@
     <string name="Korrektmail">Indtast korrekt E-mail og prøv igen</string>
     <string name="Annuller">Annuller</string>
 
+    <string name="Musik">Musik</string>
+    <string name="Natur">Natur</string>
+
 
 </resources>
