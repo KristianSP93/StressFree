@@ -6,46 +6,89 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
+import com.example.kristian.stressfree.Models.User;
 import com.example.kristian.stressfree.R;
+import com.google.firebase.auth.FirebaseUser;
 
 
 public class MainActivity extends AppCompatActivity {
 
-
-Button btnSound;
+    private Button btpic, btvid, btmind, btsound, btstressfree, btmovement;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        FirebaseUser user;
 
-        btnSound = findViewById(R.id.btnSound);
+        if (savedInstanceState != null) {
+            // Get user  and save it. Not saved yet
+            savedInstanceState.getSerializable("userLogIn");
+        }
 
-        btnSound.setOnClickListener(new View.OnClickListener() {
+        btpic = findViewById(R.id.btnPictures);
+        btvid =  findViewById(R.id.btnVideos);
+        btmind = findViewById(R.id.btnMindfulness);
+        btsound =  findViewById(R.id.btnSound);
+        btstressfree = findViewById(R.id.btnMyStressFree);
+        btmovement = findViewById(R.id.btnMovement);
+
+        btpic.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                Intent intent = new Intent(MainActivity.this, PictureActivity.class);
+                startActivity(intent);
+            }
+        });
 
-                Intent intent = new Intent(MainActivity.this,SoundActivity.class);
+        btvid.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivity.this, VideoActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        btvid.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivity.this, VideoActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        btmind.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivity.this, MindfulnessActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        btmovement.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivity.this, MovementActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        btstressfree.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivity.this, MyStressFreeActivity.class);
                 startActivity(intent);
             }
         });
 
 
-
-
-
-
     }
 
 
 
 
-    private void test()
-    {
-        int i = 1+1;
-    }
-    private void test2() {int k = 1+4;}
-    private void test3() {int a = 1;}
+
+
 
 
 }
