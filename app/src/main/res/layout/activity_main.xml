@@ -10,87 +10,93 @@
     <Button
         android:id="@+id/btnMyStressFree"
         style="@style/Widget.AppCompat.Button.Colored"
-        android:layout_width="192dp"
-        android:layout_height="134dp"
+        android:layout_width="180dp"
+        android:layout_height="150dp"
+        android:layout_marginTop="8dp"
         android:layout_marginEnd="2dp"
         android:layout_marginRight="2dp"
-        android:layout_marginBottom="8dp"
-        android:background="@android:color/holo_purple"
+        android:background="@android:color/holo_red_light"
         android:text="@string/MitStressFri"
         android:textAppearance="@style/TextAppearance.AppCompat.Display2"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:textSize="30sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/btnMovement" />
+        app:layout_constraintStart_toEndOf="@+id/btnMovement"
+        app:layout_constraintTop_toBottomOf="@+id/btnVideos" />
 
     <Button
         android:id="@+id/btnVideos"
         style="@style/Widget.AppCompat.Button.Colored"
-        android:layout_width="192dp"
-        android:layout_height="134dp"
+        android:layout_width="180dp"
+        android:layout_height="150dp"
+        android:layout_marginTop="8dp"
         android:layout_marginEnd="2dp"
         android:layout_marginRight="2dp"
-        android:layout_marginBottom="8dp"
         android:background="@android:color/holo_green_light"
         android:text="@string/Videoer"
         android:textAppearance="@style/TextAppearance.AppCompat.Display2"
-        app:layout_constraintBottom_toTopOf="@+id/btnMyStressFree"
+        android:textSize="30sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/btnMovement" />
+        app:layout_constraintStart_toEndOf="@+id/btnMovement"
+        app:layout_constraintTop_toBottomOf="@+id/btnPictures" />
 
     <Button
         android:id="@+id/btnPictures"
         style="@style/Widget.AppCompat.Button.Colored"
-        android:layout_width="192dp"
-        android:layout_height="134dp"
+        android:layout_width="180dp"
+        android:layout_height="150dp"
+        android:layout_marginTop="8dp"
         android:layout_marginEnd="2dp"
         android:layout_marginRight="2dp"
-        android:layout_marginBottom="8dp"
-        android:background="@android:color/holo_green_dark"
+        android:background="@android:color/holo_orange_light"
         android:text="@string/Billeder"
         android:textAppearance="@style/TextAppearance.AppCompat.Display2"
-        app:layout_constraintBottom_toTopOf="@+id/btnVideos"
+        android:textSize="30sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/btnMindfulness" />
+        app:layout_constraintStart_toEndOf="@+id/btnMindfulness"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/btnMovement"
         style="@style/Widget.AppCompat.Button.Colored"
-        android:layout_width="192dp"
-        android:layout_height="134dp"
+        android:layout_width="180dp"
+        android:layout_height="150dp"
         android:layout_marginStart="8dp"
         android:layout_marginLeft="8dp"
-        android:layout_marginBottom="8dp"
-        android:background="@android:color/holo_red_light"
+        android:layout_marginTop="8dp"
+        android:background="@android:color/holo_purple"
         android:text="@string/Bevægelse"
         android:textAppearance="@style/TextAppearance.AppCompat.Display2"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        android:textSize="30sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnSound" />
 
     <Button
         android:id="@+id/btnSound"
         style="@style/Widget.AppCompat.Button.Colored"
-        android:layout_width="192dp"
-        android:layout_height="134dp"
+        android:layout_width="180dp"
+        android:layout_height="150dp"
         android:layout_marginStart="8dp"
         android:layout_marginLeft="8dp"
-        android:layout_marginBottom="8dp"
+        android:layout_marginTop="8dp"
         android:background="@android:color/holo_orange_dark"
         android:text="@string/Lyd"
         android:textAppearance="@style/TextAppearance.AppCompat.Display2"
-        app:layout_constraintBottom_toTopOf="@+id/btnMovement"
-        app:layout_constraintStart_toStartOf="parent" />
+        android:textSize="30sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnMindfulness" />
 
     <Button
         android:id="@+id/btnMindfulness"
         style="@style/Widget.AppCompat.Button.Colored"
-        android:layout_width="192dp"
-        android:layout_height="134dp"
+        android:layout_width="180dp"
+        android:layout_height="150dp"
         android:layout_marginStart="8dp"
         android:layout_marginLeft="8dp"
-        android:layout_marginBottom="8dp"
+        android:layout_marginTop="8dp"
         android:background="@android:color/holo_blue_bright"
         android:text="@string/Mindfulness"
         android:textAppearance="@style/TextAppearance.AppCompat.Display2"
-        app:layout_constraintBottom_toTopOf="@+id/btnSound"
-        app:layout_constraintStart_toStartOf="parent" />
+        android:textSize="30sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 </android.support.constraint.ConstraintLayout>

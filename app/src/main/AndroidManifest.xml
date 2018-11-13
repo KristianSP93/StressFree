@@ -24,7 +24,12 @@
         <activity android:name=".Views.MindfulnessActivity" />
         <activity android:name=".Views.VideoActivity" />
         <activity android:name=".Views.MovementActivity" />
-        <activity android:name=".Views.MyStressFreeActivity"></activity>
+        <activity android:name=".Views.MyStressFreeActivity" />
+        <activity
+            android:name=".Utilities.FullscreenPicActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:label="@string/title_activity_fullscreen_pic"
+            android:theme="@style/FullscreenTheme"></activity>
     </application>
 
 </manifest>

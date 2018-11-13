@@ -1,18 +1,21 @@
 package com.example.kristian.stressfree.Views;
 
 import android.content.Context;
+import android.content.Intent;
+import android.net.Uri;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.BaseAdapter;
 import android.widget.GridView;
 import android.widget.ImageView;
+import android.widget.Toast;
 
 import com.example.kristian.stressfree.R;
+import com.example.kristian.stressfree.Utilities.FullscreenPicActivity;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.storage.FileDownloadTask;
@@ -24,16 +27,18 @@ import java.io.IOException;
 
 public class PictureActivity extends AppCompatActivity {
 
-    private StorageReference mStorageRef;
-    private boolean boo = true;
+    private Uri tUri;
+    FirebaseStorage storage = FirebaseStorage.getInstance();
+
+    StorageReference storageRef;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_picture);
-        mStorageRef = FirebaseStorage.getInstance().getReference();
+        storageRef = storage.getReference();
 
-        final GridView gridview = (GridView) findViewById(R.id.gridViewPictures);
+        final GridView gridview = findViewById(R.id.gridViewPictures);
 
 
         gridview.setAdapter(new ImageAdapter(   this));
@@ -41,31 +46,46 @@ public class PictureActivity extends AppCompatActivity {
         gridview.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                if(boo == true) {
-                    gridview.getChildAt(i).setMinimumWidth(200);
-                    gridview.getChildAt(i).setMinimumHeight(200);
-                    boo = false;
-                } else{
-                    gridview.getChildAt(i).setMinimumWidth(20);
-                    gridview.getChildAt(i).setMinimumHeight(20);
-                    boo = true;
-                }
+                Intent fullScreenIntent = new Intent(PictureActivity.this, FullscreenPicActivity.class);
+                getPictureURI();
+                fullScreenIntent.setData(tUri);
+                startActivity(fullScreenIntent);
             }
-
         });
+    }
+    /*
 
+    add
+        httpsReference.("PictureNature%2Fwatergreen.jpg?alt=media&token=18df1692-db9c-4d43-8334-ecc6f8dab04d").getDownloadUrl()
+     */
+
+    public void getPictureURI(){
+        //StorageReference filepath = mStorageRef.child("PictureNature").child("beautiful_green_forest_background.png");
+
+        storageRef.child("PictureNature/watergreen.jpg").getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
+            @Override
+            public void onSuccess(Uri uri) {
+                tUri = uri;
+            }
+        }).addOnFailureListener(new OnFailureListener() {
+            @Override
+            public void onFailure(@NonNull Exception exception) {
+                tUri = Uri.parse("https://firebasestorage.googleapis.com/v0/b/stressfree-d7977.appspot.com/o/PictureNature%2Fbeautiful_green_forest_background.png?alt=media&token=7e9e262b-6155-4e69-9964-a04ad35d0b1d");
+                Toast.makeText(PictureActivity.this, "Fejl: " + exception.toString(), Toast.LENGTH_LONG);
+            }
+        });
     }
 
+
     public void getPictures() throws IOException {
-        StorageReference picturesRef = mStorageRef.child("images/rivers.jpg");
-        File localFile = File.createTempFile("images", "jpg");
+        StorageReference picturesRef = storageRef.child("PictureNature/beautiful_green_forest_background.png");
+        File localFile = File.createTempFile("images", "png");
         picturesRef.getFile(localFile)
                 .addOnSuccessListener(new OnSuccessListener<FileDownloadTask.TaskSnapshot>() {
                     @Override
                     public void onSuccess(FileDownloadTask.TaskSnapshot taskSnapshot) {
                         // Successfully downloaded data to local file
                         // ...
-
                     }
                 })
                 .addOnFailureListener(new OnFailureListener() {
@@ -117,7 +137,6 @@ public class PictureActivity extends AppCompatActivity {
 
         // references to our images
         private Integer[] mThumbIds = {
-                //R.drawable.agriculture_bright_clouds_440731,
                 R.drawable.beautiful_green_forest_background,
                 R.drawable.beautiful_green_forest_background,
                 R.drawable.beautiful_green_forest_background,

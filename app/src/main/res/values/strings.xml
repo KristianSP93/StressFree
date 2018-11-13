@@ -5,7 +5,7 @@
     <string name="Kodeord">Kodeord</string>
     <string name="Gentag_kodeord">Gentag kodeord</string>
     <string name="Mand">Mand</string>
-    <string name="Kvinde" >Kvinde</string>
+    <string name="Kvinde">Kvinde</string>
     <string name="Email">E-mail</string>
     <string name="Fødselsdato">Fødselsdato</string>
     <string name="Login">Log ind</string>
@@ -29,6 +29,13 @@
 
     <string name="Musik">Musik</string>
     <string name="Natur">Natur</string>
+
+    <string name="title_activity_fullscreen">FullscreenActivity</string>
+    <string name="dummy_button">Dummy Button</string>
+    <string name="dummy_content">DUMMY\nCONTENT</string>
+
+    <string name="title_activity_fullscreen_pic">FullscreenPicActivity</string>
+    <string name="StortBillede">Fuldskærms billede</string>
 
 
 </resources>
