@@ -3,6 +3,8 @@ package com.example.kristian.stressfree.Views;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 
@@ -41,10 +43,10 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        btvid.setOnClickListener(new View.OnClickListener() {
+        btsound.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(MainActivity.this, VideoActivity.class);
+                Intent intent = new Intent(MainActivity.this, SoundActivity.class);
                 startActivity(intent);
             }
         });
@@ -82,6 +84,26 @@ public class MainActivity extends AppCompatActivity {
         });
 
 
+    }
+
+    // creating action bar using menu from res
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.mymenu, menu);
+        return super.onCreateOptionsMenu(menu);
+    }
+
+    // open settings from this activity
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        int id = item.getItemId();
+
+        if (id == R.id.mybutton) {
+            Intent intent =  new Intent(MainActivity.this, SettingsActivity.class);
+            startActivity(intent);
+
+        }
+        return false;
     }
 
 
