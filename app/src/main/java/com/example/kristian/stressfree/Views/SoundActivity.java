@@ -12,7 +12,7 @@ import com.example.kristian.stressfree.Utilities.MusicAdapter;
 
 import java.util.ArrayList;
 
-public class SoundActivity extends AppCompatActivity {
+public class    SoundActivity extends AppCompatActivity {
 
     private ArrayList<Music> arrayList;
     private MusicAdapter adapter;
@@ -42,7 +42,10 @@ public class SoundActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 //clearing the list first and then adding the music
-                if (isEmpty) {
+
+
+
+                /**if (isEmpty) {
                     arrayList.clear();
                     arrayList.add(new Music("Mama Said", "Lukas Graham", R.raw.mama_said));
                     adapter.notifyDataSetChanged();
@@ -54,8 +57,10 @@ public class SoundActivity extends AppCompatActivity {
                     arrayList.add(new Music("Mama Said", "Lukas Graham", R.raw.mama_said));
                     adapter.notifyDataSetChanged();
                     isEmpty = true;
-
                 }
+                 */
+
+
 
 
             }
@@ -65,7 +70,7 @@ public class SoundActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 //clearing the list first and then adding the music
-                if (isEmpty) {
+               /** if (isEmpty) {
                     arrayList.clear();
                     arrayList.add(new Music("Happy Home", "Lukas Graham", R.raw.happy_home));
                     adapter.notifyDataSetChanged();
@@ -79,8 +84,9 @@ public class SoundActivity extends AppCompatActivity {
                     isEmpty = true;
 
                 }
-
+                */
             }
         });
+
     }
 }
