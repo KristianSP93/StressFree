@@ -5,6 +5,8 @@ import android.content.Intent;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
@@ -74,10 +76,10 @@ public class MainActivity extends AppCompatActivity implements MainPresenter.Con
             }
         });
 
-        btvid.setOnClickListener(new View.OnClickListener() {
+        btsound.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(MainActivity.this, VideoActivity.class);
+                Intent intent = new Intent(MainActivity.this, SoundActivity.class);
                 startActivity(intent);
             }
         });
@@ -124,6 +126,31 @@ public class MainActivity extends AppCompatActivity implements MainPresenter.Con
 
 
 
+    }
+
+    // creating action bar using menu from res
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.mymenu, menu);
+        return super.onCreateOptionsMenu(menu);
+    }
+
+    // open settings from this activity
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        int id = item.getItemId();
+
+        if (id == R.id.btSettings) {
+            Intent intent =  new Intent(MainActivity.this, SettingsActivity.class);
+            startActivity(intent);
+
+        }
+        if (id == R.id.btLogoff) {
+            Intent intent = new Intent(MainActivity.this,MainActivity.class);
+            startActivity(intent);
+
+        }
+        return false;
     }
 
 

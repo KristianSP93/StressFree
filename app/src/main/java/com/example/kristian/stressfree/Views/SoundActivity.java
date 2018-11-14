@@ -1,7 +1,10 @@
 package com.example.kristian.stressfree.Views;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ListView;
@@ -12,7 +15,7 @@ import com.example.kristian.stressfree.Utilities.MusicAdapter;
 
 import java.util.ArrayList;
 
-public class SoundActivity extends AppCompatActivity {
+public class    SoundActivity extends AppCompatActivity {
 
     private ArrayList<Music> arrayList;
     private MusicAdapter adapter;
@@ -42,7 +45,10 @@ public class SoundActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 //clearing the list first and then adding the music
-                if (isEmpty) {
+
+
+
+                /**if (isEmpty) {
                     arrayList.clear();
                     arrayList.add(new Music("Mama Said", "Lukas Graham", R.raw.mama_said));
                     adapter.notifyDataSetChanged();
@@ -54,8 +60,10 @@ public class SoundActivity extends AppCompatActivity {
                     arrayList.add(new Music("Mama Said", "Lukas Graham", R.raw.mama_said));
                     adapter.notifyDataSetChanged();
                     isEmpty = true;
-
                 }
+                 */
+
+
 
 
             }
@@ -65,7 +73,7 @@ public class SoundActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 //clearing the list first and then adding the music
-                if (isEmpty) {
+               /** if (isEmpty) {
                     arrayList.clear();
                     arrayList.add(new Music("Happy Home", "Lukas Graham", R.raw.happy_home));
                     adapter.notifyDataSetChanged();
@@ -79,8 +87,35 @@ public class SoundActivity extends AppCompatActivity {
                     isEmpty = true;
 
                 }
-
+                */
             }
         });
+
+    }
+
+
+    // creating action bar using menu from res
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.mymenu, menu);
+        return super.onCreateOptionsMenu(menu);
+    }
+
+    // open settings from this activity
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        int id = item.getItemId();
+
+        if (id == R.id.btSettings) {
+            Intent intent =  new Intent(SoundActivity.this, SettingsActivity.class);
+            startActivity(intent);
+
+        }
+        if (id == R.id.btLogoff) {
+            Intent intent = new Intent(SoundActivity.this,MainActivity.class);
+            startActivity(intent);
+
+        }
+        return false;
     }
 }
