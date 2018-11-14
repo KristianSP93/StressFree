@@ -106,8 +106,13 @@ public class    SoundActivity extends AppCompatActivity {
     public boolean onOptionsItemSelected(MenuItem item) {
         int id = item.getItemId();
 
-        if (id == R.id.mybutton) {
+        if (id == R.id.btSettings) {
             Intent intent =  new Intent(SoundActivity.this, SettingsActivity.class);
+            startActivity(intent);
+
+        }
+        if (id == R.id.btLogoff) {
+            Intent intent = new Intent(SoundActivity.this,MainActivity.class);
             startActivity(intent);
 
         }
