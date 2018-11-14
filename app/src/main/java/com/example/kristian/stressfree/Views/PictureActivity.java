@@ -84,6 +84,7 @@ public class PictureActivity extends AppCompatActivity {
                     public void onSuccess(FileDownloadTask.TaskSnapshot taskSnapshot) {
                         // Successfully downloaded data to local file
                         // ...
+
                     }
                 })
                 .addOnFailureListener(new OnFailureListener() {
@@ -135,6 +136,7 @@ public class PictureActivity extends AppCompatActivity {
 
         // references to our images
         private Integer[] mThumbIds = {
+                //R.drawable.agriculture_bright_clouds_440731,
                 R.drawable.beautiful_green_forest_background,
                 R.drawable.beautiful_green_forest_background,
                 R.drawable.beautiful_green_forest_background,

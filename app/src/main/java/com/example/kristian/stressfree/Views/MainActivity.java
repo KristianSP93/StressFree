@@ -42,7 +42,7 @@ public class MainActivity extends AppCompatActivity implements MainPresenter.Con
                 }
             };
             AlertDialog.Builder builder = new AlertDialog.Builder(this);
-            builder.setMessage(R.string.Logaf).setPositiveButton(R.string.Ja, dialogClickListener)
+            builder.setMessage(R.string.LogafTekst).setPositiveButton(R.string.Ja, dialogClickListener)
                     .setNegativeButton(R.string.Nej, dialogClickListener).show();
         } else{
             super.onBackPressed();
