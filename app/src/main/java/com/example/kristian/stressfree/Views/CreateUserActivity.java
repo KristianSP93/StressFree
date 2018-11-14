@@ -50,13 +50,14 @@ public class CreateUserActivity extends AppCompatActivity implements CreateUserP
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_create_user);
 
+        // Initialising widgets
         name = findViewById(R.id.editName);
         email = findViewById(R.id.editEmail);
         password1 = findViewById(R.id.editPassword);
         password2 = findViewById(R.id.editRePassword);
         createUser = findViewById(R.id.btCreate);
         cancel = findViewById(R.id.btCancel);
-        theme = findViewById(R.id.spinnerTheme);
+        //theme = findViewById(R.id.spinnerTheme);
         presenter = new CreateUserPresenter(this);
 
 

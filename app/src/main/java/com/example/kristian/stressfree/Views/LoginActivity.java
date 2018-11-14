@@ -44,7 +44,11 @@ public class LoginActivity extends AppCompatActivity implements LoginPresenter.C
         logind.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                presenter.signin(email.getText().toString(), kodeord.getText().toString());
+                if(email.getText().toString() == "" || kodeord.getText().toString() == ""){
+
+                } else {
+                    presenter.signin(email.getText().toString(), kodeord.getText().toString());
+                }
             }
         });
 

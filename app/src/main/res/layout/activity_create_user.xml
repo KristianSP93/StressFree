@@ -17,7 +17,8 @@
         android:hint="@string/Navn"
         android:inputType="textPersonName"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        android:importantForAutofill="no" />
 
     <EditText
         android:id="@+id/editEmail"
@@ -30,7 +31,8 @@
         android:hint="@string/Email"
         android:inputType="textEmailAddress"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editName" />
+        app:layout_constraintTop_toBottomOf="@+id/editName"
+        android:importantForAutofill="no" />
 
     <EditText
         android:id="@+id/editPassword"
@@ -43,7 +45,8 @@
         android:hint="@string/Kodeord"
         android:inputType="textPassword"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editEmail" />
+        app:layout_constraintTop_toBottomOf="@+id/editEmail"
+        android:importantForAutofill="no" />
 
     <EditText
         android:id="@+id/editRePassword"
@@ -57,7 +60,8 @@
         android:inputType="textPassword"
         android:selectAllOnFocus="false"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editPassword" />
+        app:layout_constraintTop_toBottomOf="@+id/editPassword"
+        android:importantForAutofill="no" />
 
     <Button
         android:id="@+id/btCreate"
@@ -69,16 +73,6 @@
         android:text="@string/Opret_bruger"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
-
-    <Spinner
-        android:id="@+id/spinnerTheme"
-        android:layout_width="160dp"
-        android:layout_height="55dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginTop="76dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editRePassword" />
 
     <Button
         android:id="@+id/btCancel"

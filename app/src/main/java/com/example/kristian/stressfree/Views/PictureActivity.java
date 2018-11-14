@@ -38,8 +38,8 @@ public class PictureActivity extends AppCompatActivity {
         setContentView(R.layout.activity_picture);
         storageRef = storage.getReference();
 
+        // Initialising widgets
         final GridView gridview = findViewById(R.id.gridViewPictures);
-
 
         gridview.setAdapter(new ImageAdapter(   this));
 
@@ -53,11 +53,6 @@ public class PictureActivity extends AppCompatActivity {
             }
         });
     }
-    /*
-
-    add
-        httpsReference.("PictureNature%2Fwatergreen.jpg?alt=media&token=18df1692-db9c-4d43-8334-ecc6f8dab04d").getDownloadUrl()
-     */
 
     public void getPictureURI(){
         //StorageReference filepath = mStorageRef.child("PictureNature").child("beautiful_green_forest_background.png");
@@ -71,7 +66,7 @@ public class PictureActivity extends AppCompatActivity {
             @Override
             public void onFailure(@NonNull Exception exception) {
                 tUri = Uri.parse("https://firebasestorage.googleapis.com/v0/b/stressfree-d7977.appspot.com/o/PictureNature%2Fbeautiful_green_forest_background.png?alt=media&token=7e9e262b-6155-4e69-9964-a04ad35d0b1d");
-                Toast.makeText(PictureActivity.this, "Fejl: " + exception.toString(), Toast.LENGTH_LONG);
+                Toast.makeText(PictureActivity.this, "Fejl: " + exception.toString(), Toast.LENGTH_LONG).show();
             }
         });
     }

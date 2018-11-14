@@ -36,6 +36,11 @@
 
     <string name="title_activity_fullscreen_pic">FullscreenPicActivity</string>
     <string name="StortBillede">Fuldskærms billede</string>
+    <string name="Gem">Gem</string>
+    <string name="Ja">Ja</string>
+    <string name="Nej">Nej</string>
+    <string name="Logaf">Er du sikker på du vil logge af?</string>
+    <string name="BrugerLoggetind">Du skal være logget ind for at kunne benytte denne funktion</string>
 
 
 </resources>
