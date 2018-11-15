@@ -1,22 +1,16 @@
 package com.example.kristian.stressfree.Views;
 
 import android.content.Intent;
-import android.os.PersistableBundle;
-import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.kristian.stressfree.Presenters.LoginPresenter;
+import com.example.kristian.stressfree.Presenters.SoundPresenter;
 import com.example.kristian.stressfree.R;
-import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.Task;
-import com.google.firebase.auth.AuthResult;
-import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
 public class LoginActivity extends AppCompatActivity implements LoginPresenter.Context {
@@ -55,7 +49,7 @@ public class LoginActivity extends AppCompatActivity implements LoginPresenter.C
         createUser.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(LoginActivity.this, CreateUserActivity.class);
+                Intent intent = new Intent(LoginActivity.this, SoundPresenter.CreateUserActivity.class);
                 startActivity(intent);
             }
         });

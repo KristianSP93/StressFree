@@ -1,6 +1,6 @@
 <resources>
 
-<!--Create user & Settings activity -->
+    <!--Create user & Settings activity -->
     <string name="app_name">StressFree</string>
     <string name="Kon">Køn</string>
     <string name="Navn">Navn</string>
@@ -15,18 +15,18 @@
     <string name="Opret_bruger">Opret Bruger</string>
     <string name="Indstillinger">Indstillinger</string>
     <string name="Logaf">Log af</string>
-<!--Create user & Settings activity  -->
+    <!--Create user & Settings activity  -->
 
-<!--Main Activity -->
+    <!--Main Activity -->
     <string name="Mindfulness">Mindfulness</string>
     <string name="Billeder">Billeder</string>
     <string name="Lyd">Lyd</string>
     <string name="Videoer">Videoer</string>
     <string name="Bevægelse">Bevægelse</string>
     <string name="MitStressFri">MitStressFri</string>
-<!--Main Activity -->
+    <!--Main Activity -->
 
-<!--Login Activity -->
+    <!--Login Activity -->
     <string name="UdenLogin">Fortsæt uden login</string>
     <string name="GlemtKode">Glemt Kode</string>
     <string name="KodeMailSendt">En mail med instruktioner er blevet sendt til din mail.</string>
@@ -35,21 +35,21 @@
     <string name="Annuller">Annuller</string>
     <string name="EnsKode">Kodeord er ikke det samme</string>
     <string name="GodkendelseFejlede">Der opstod et problem ved oprettelse af bruger. Prøv igen senere.</string>
-<!--Login Activity -->
+    <!--Login Activity -->
 
 
-<!--Picture, Sound % Video Activity -->
+    <!--Picture, Sound % Video Activity -->
     <string name="Musik">Musik</string>
     <string name="Natur">Natur</string>
     <string name="Dyr">Dyr</string>
-<!--Picture, Sound % Video Activity -->
+    <!--Picture, Sound % Video Activity -->
 
-<!--Mindfulness Activity -->
+    <!--Mindfulness Activity -->
     <string name="VælgMindfulness">Vælg Mindfulness stadie herunder</string>
-<!--Mindfulness Activity -->
+    <!--Mindfulness Activity -->
 
 
-<!-- Activity labels-->
+    <!-- Activity labels-->
     <string name="labelOpretBruger">Opret bruger</string>
     <string name="labelMindfulness">Mindfulness</string>
     <string name="labelBevægelse">Bevægelse</string>
@@ -58,11 +58,11 @@
     <string name="labelIndstillinger">Indstillinger</string>
     <string name="labelLydfiler">Lydfiler</string>
     <string name="labelVideoer">Videoer</string>
-<!--activity labels-->
+    <!--activity labels-->
 
-<!--Movement activity -->
+    <!--Movement activity -->
 
-<!--Movement activity -->
+    <!--Movement activity -->
 
     <string name="title_activity_fullscreen">FullscreenActivity</string>
     <string name="dummy_button">Dummy Button</string>
