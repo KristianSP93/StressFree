@@ -15,7 +15,7 @@ import com.example.kristian.stressfree.Utilities.MusicAdapter;
 
 import java.util.ArrayList;
 
-public class    SoundActivity extends AppCompatActivity {
+public class    SoundActivity extends OptionsMenu {
 
     private ArrayList<Music> arrayList;
     private MusicAdapter adapter;
@@ -94,28 +94,5 @@ public class    SoundActivity extends AppCompatActivity {
     }
 
 
-    // creating action bar using menu from res
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.mymenu, menu);
-        return super.onCreateOptionsMenu(menu);
-    }
 
-    // open settings from this activity
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        int id = item.getItemId();
-
-        if (id == R.id.btSettings) {
-            Intent intent =  new Intent(SoundActivity.this, SettingsActivity.class);
-            startActivity(intent);
-
-        }
-        if (id == R.id.btLogoff) {
-            Intent intent = new Intent(SoundActivity.this,MainActivity.class);
-            startActivity(intent);
-
-        }
-        return false;
-    }
 }

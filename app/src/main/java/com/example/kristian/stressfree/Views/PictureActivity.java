@@ -115,8 +115,6 @@ public class PictureActivity extends AppCompatActivity implements PicturePresent
             return imageView;
         }
 
-
-
         // references to our images
         private Integer[] mNatureIds = {
                 R.drawable.beautiful_green_forest_background,

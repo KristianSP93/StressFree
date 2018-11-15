@@ -19,26 +19,32 @@
         <activity android:name=".Utilities.FullscreenPicActivity">
 
         </activity>
-        <activity android:name=".Views.CreateUserActivity"
-            android:label="@string/labelOpretBruger"/>
+        <activity
+            android:name=".Presenters.SoundPresenter$CreateUserActivity"
+            android:label="@string/labelOpretBruger" />
         <activity android:name=".Views.MainActivity" />
-        <activity android:name=".Views.SettingsActivity"
-            android:label="@string/labelIndstillinger"/>
-        <activity android:name=".Views.SoundActivity"
-            android:label="@string/labelLydfiler"/>
-        <activity android:name=".Views.PictureActivity"
-            android:label="@string/labelBilleder"/>
-        <activity android:name=".Views.MindfulnessActivity"
-            android:label="@string/labelMindfulness"/>
-        <activity android:name=".Views.VideoActivity"
-            android:label="@string/labelVideoer"/>
-        <activity android:name=".Views.MovementActivity"
-            android:label="@string/labelBevægelse"/>
-        <activity android:name=".Views.MyStressFreeActivity"
-            android:label="@string/labelMitStressFri">
-
-
-        </activity>
+        <activity
+            android:name=".Views.SettingsActivity"
+            android:label="@string/labelIndstillinger" />
+        <activity
+            android:name=".Views.SoundActivity"
+            android:label="@string/labelLydfiler" />
+        <activity
+            android:name=".Views.PictureActivity"
+            android:label="@string/labelBilleder" />
+        <activity
+            android:name=".Views.MindfulnessActivity"
+            android:label="@string/labelMindfulness" />
+        <activity
+            android:name=".Views.VideoActivity"
+            android:label="@string/labelVideoer" />
+        <activity
+            android:name=".Views.MovementActivity"
+            android:label="@string/labelBevægelse" />
+        <activity
+            android:name=".Views.MyStressFreeActivity"
+            android:label="@string/labelMitStressFri"></activity>
+        <activity android:name=".Views.OptionsMenu"></activity>
     </application>
 
 </manifest>
