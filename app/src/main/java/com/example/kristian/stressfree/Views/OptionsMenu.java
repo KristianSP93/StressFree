@@ -7,13 +7,18 @@ import android.view.Menu;
 import android.view.MenuItem;
 
 import com.example.kristian.stressfree.R;
+import com.example.kristian.stressfree.Utilities.Globals;
 
 public class OptionsMenu extends AppCompatActivity {
+
+
+    private Globals globals;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_options_menu);
+        globals = new Globals(this);
     }
 
 
@@ -36,9 +41,7 @@ public class OptionsMenu extends AppCompatActivity {
 
         }
         if (id == R.id.btLogoff) {
-            Intent intent = new Intent(OptionsMenu.this,MainActivity.class);
-            startActivity(intent);
-
+            globals.LogOutDialog();
         }
         return false;
     }
