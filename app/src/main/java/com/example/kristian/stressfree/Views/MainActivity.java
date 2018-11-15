@@ -19,7 +19,7 @@ import com.google.firebase.auth.FirebaseUser;
 public class MainActivity extends AppCompatActivity implements MainPresenter.Context{
 
     private Button btpic, btvid, btmind, btsound, btstressfree, btmovement;
-
+    static boolean active = false;
     private MainPresenter presenter;
 
     @Override
@@ -47,6 +47,20 @@ public class MainActivity extends AppCompatActivity implements MainPresenter.Con
         } else{
             super.onBackPressed();
         }
+    }
+
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        active = true;
+    }
+
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+        active = false;
     }
 
     @Override

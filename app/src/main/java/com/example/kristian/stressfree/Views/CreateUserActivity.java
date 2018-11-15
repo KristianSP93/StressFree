@@ -43,7 +43,7 @@ public class CreateUserActivity extends AppCompatActivity implements CreateUserP
     private TextView name, email, password1, password2;
     private Button createUser, cancel;
 
-    private Spinner theme;
+    // private Spinner theme;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -84,6 +84,7 @@ public class CreateUserActivity extends AppCompatActivity implements CreateUserP
         String[] items = new String[]{"1", "2", "3"};
         //create an adapter to describe how the items are displayed, adapters are used in several places in android.
         //There are multiple variations of this, but this is the basic variant.
+        /*
         ArrayAdapter<String> adapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_dropdown_item, items);
         theme.setAdapter(adapter);
 
@@ -110,7 +111,7 @@ public class CreateUserActivity extends AppCompatActivity implements CreateUserP
             }
 
         });
-
+*/
        // if (savedInstanceState != null) {
         //    email.setText(savedInstanceState.getString(STATE_EMAIL, ""));
          //   password1.setText(savedInstanceState.getString(STATE_PASSWORD1, ""));

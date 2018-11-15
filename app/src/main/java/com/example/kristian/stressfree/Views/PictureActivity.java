@@ -13,14 +13,19 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.BaseAdapter;
+import android.widget.Button;
 import android.widget.GridView;
 import android.widget.ImageView;
 import android.widget.Toast;
 
+import com.example.kristian.stressfree.Presenters.MainPresenter;
+import com.example.kristian.stressfree.Presenters.PicturePresenter;
 import com.example.kristian.stressfree.R;
 import com.example.kristian.stressfree.Utilities.FullscreenPicActivity;
+import com.example.kristian.stressfree.Utilities.Globals;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.android.gms.tasks.Task;
 import com.google.firebase.storage.FileDownloadTask;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
@@ -28,21 +33,24 @@ import com.google.firebase.storage.StorageReference;
 import java.io.File;
 import java.io.IOException;
 
-public class PictureActivity extends AppCompatActivity {
+public class PictureActivity extends AppCompatActivity implements PicturePresenter.Context{
 
-    private Uri tUri;
-    FirebaseStorage storage = FirebaseStorage.getInstance();
-
-    StorageReference storageRef;
+    private PicturePresenter presenter;
+    private Button btAnimals, btNature;
+    private Globals globals;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_picture);
-        storageRef = storage.getReference();
+
+        presenter = new PicturePresenter(this);
+        globals = new Globals(this);
 
         // Initialising widgets
         final GridView gridview = findViewById(R.id.gridViewPictures);
+        Button btAnimals = findViewById(R.id.btPicAnimals);
+        Button btNature = findViewById(R.id.btPicNature);
 
         gridview.setAdapter(new ImageAdapter(   this));
 
@@ -50,52 +58,26 @@ public class PictureActivity extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
                 Intent fullScreenIntent = new Intent(PictureActivity.this, FullscreenPicActivity.class);
-                getPictureURI();
-                fullScreenIntent.setData(tUri);
+                presenter.getPictureURI();
+                //fullScreenIntent.setData(tUri);
                 startActivity(fullScreenIntent);
             }
         });
-    }
 
-    public void getPictureURI(){
-        //StorageReference filepath = mStorageRef.child("PictureNature").child("beautiful_green_forest_background.png");
-
-        storageRef.child("PictureNature/watergreen.jpg").getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
+        btAnimals.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onSuccess(Uri uri) {
-                tUri = uri;
+            public void onClick(View view) {
+
             }
-        }).addOnFailureListener(new OnFailureListener() {
+        });
+
+        btNature.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onFailure(@NonNull Exception exception) {
-                tUri = Uri.parse("https://firebasestorage.googleapis.com/v0/b/stressfree-d7977.appspot.com/o/PictureNature%2Fbeautiful_green_forest_background.png?alt=media&token=7e9e262b-6155-4e69-9964-a04ad35d0b1d");
-                Toast.makeText(PictureActivity.this, "Fejl: " + exception.toString(), Toast.LENGTH_LONG).show();
+            public void onClick(View view) {
+
             }
         });
     }
-
-
-    public void getPictures() throws IOException {
-        StorageReference picturesRef = storageRef.child("PictureNature/beautiful_green_forest_background.png");
-        File localFile = File.createTempFile("images", "png");
-        picturesRef.getFile(localFile)
-                .addOnSuccessListener(new OnSuccessListener<FileDownloadTask.TaskSnapshot>() {
-                    @Override
-                    public void onSuccess(FileDownloadTask.TaskSnapshot taskSnapshot) {
-                        // Successfully downloaded data to local file
-                        // ...
-
-                    }
-                })
-                .addOnFailureListener(new OnFailureListener() {
-            @Override
-            public void onFailure(@NonNull Exception exception) {
-                // Handle failed download
-                // ...
-            }
-        });
-    }
-
 
     public class ImageAdapter extends BaseAdapter {
         private Context mContext;
@@ -105,7 +87,7 @@ public class PictureActivity extends AppCompatActivity {
         }
 
         public int getCount() {
-            return mThumbIds.length;
+            return mNatureIds.length;
         }
 
         public Object getItem(int position) {
@@ -129,14 +111,14 @@ public class PictureActivity extends AppCompatActivity {
             } else {
                 imageView = (ImageView) convertView;
             }
-
-            imageView.setImageResource(mThumbIds[position]);
+            imageView.setImageResource(mNatureIds[position]);
             return imageView;
         }
+
+
 
         // references to our images
-        private Integer[] mThumbIds = {
-                //R.drawable.agriculture_bright_clouds_440731,
+        private Integer[] mNatureIds = {
                 R.drawable.beautiful_green_forest_background,
                 R.drawable.beautiful_green_forest_background,
                 R.drawable.beautiful_green_forest_background,
@@ -152,53 +134,6 @@ public class PictureActivity extends AppCompatActivity {
         };
     }
 
-
-/*
-    public class ImageAdapter extends BaseAdapter{
-        private Context mContext;
-
-        public ImageAdapter(Context c){
-            mContext = c;
-        }
-
-        public int getCount() {
-            return mThumbIds.length;
-        }
-
-
-        public Object getItem(int position){
-            return null;
-        }
-
-        public long getItemId(int position) {
-            return 0;
-        }
-
-        public View getView(int position, View convertView, ViewGroup parent) {
-            ImageView imageView;
-            if (convertView == null) {
-                // if it's not recycled, initialize some attributes
-                imageView = new ImageView(mContext);
-                //imageView.setLayoutParams(new ViewGroup.LayoutParams(85, 85));
-                //imageView.setScaleType(ImageView.ScaleType.CENTER_CROP);
-                //imageView.setPadding(8, 8, 8, 8);
-            } else {
-                imageView = (ImageView) convertView;
-            }
-
-            imageView.setImageResource(mThumbIds[position]);
-            return imageView;
-        }
-
-        private Integer[] mThumbIds = {
-                R.drawable.agriculture_bright_clouds_440731,
-                R.drawable.beautiful_green_forest_background
-        };
-
-
-    }
-
-    */
 
     // creating action bar using menu from res
     @Override
@@ -218,9 +153,7 @@ public class PictureActivity extends AppCompatActivity {
 
         }
         if (id == R.id.btLogoff) {
-            Intent intent = new Intent(PictureActivity.this,MainActivity.class);
-            startActivity(intent);
-
+            globals.LogOutDialog();
         }
         return false;
     }

@@ -16,6 +16,9 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".Utilities.FullscreenPicActivity">
+
+        </activity>
         <activity android:name=".Views.CreateUserActivity"
             android:label="@string/labelOpretBruger"/>
         <activity android:name=".Views.MainActivity" />
@@ -33,6 +36,7 @@
             android:label="@string/labelBevægelse"/>
         <activity android:name=".Views.MyStressFreeActivity"
             android:label="@string/labelMitStressFri">
+
 
         </activity>
     </application>

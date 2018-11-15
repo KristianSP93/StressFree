@@ -26,11 +26,18 @@ public class FullscreenPicActivity extends AppCompatActivity {
 
         //fullScreenImageView = findViewById(R.id.IVFullScreen);
         fullScreenImageView = findViewById(R.id.IVFullScreen);
+        Intent callingActivityIntent = getIntent();
+
 
         Glide.with(this)
-                .load("https://firebasestorage.googleapis.com/v0/b/stressfree-d7977.appspot.com/o/PictureNature%2Fbeautiful_green_forest_background.png?alt=media&token=7e9e262b-6155-4e69-9964-a04ad35d0b1d")
+                .load("https://firebasestorage.googleapis.com/v0/b/stressfree-d7977.appspot.com/o/PictureNature%2Fwatergreen.jpg?alt=media&token=18df1692-db9c-4d43-8334-ecc6f8dab04d")
                 .into(fullScreenImageView);
 
+
+       /* Glide.with(this)
+                .load(callingActivityIntent.toString())
+                .into(fullScreenImageView);
+*/
         /*
         setContentView(R.layout.activity_picfullscreen);
         Intent callingActivityIntent = getIntent();
