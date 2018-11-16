@@ -17,7 +17,7 @@ public class OptionsMenu extends AppCompatActivity {
     }
 
 
-    
+
     // creating action bar using menu from res
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
