@@ -75,6 +75,14 @@
     <string name="Nej">Nej</string>
     <string name="LogafTekst">Er du sikker på du vil logge af?</string>
     <string name="BrugerLoggetind">Du skal være logget ind for at kunne benytte denne funktion</string>
+    <string name="Netværksfejl">Netværksfejl</string>
+    <string name="Lav">Lav</string>
+    <string name="Middel">Middel</string>
+    <string name="Høj">Høj</string>
+    <string name="Øvelsesnavn">Øvelsesnavn</string>
+    <string name="Sværhedsgrad">Sværhedsgrad</string>
+    <string name="Øvelsesbeskrivelse">Øvelsesbeskrivelse</string>
+    <string name="Ok">Ok</string>
 
 
 </resources>
