@@ -26,6 +26,8 @@ public class SoundPresenter {
     private String SOUNDPRESENTER = "SOUND PRESENTER";
     FirebaseStorage storage = FirebaseStorage.getInstance();
     StorageReference storageRef;
+    Uri[] NatureArray;
+    Uri tempUri;
 
     // Constructor
     public SoundPresenter(SoundPresenter.Context view) {
@@ -34,10 +36,11 @@ public class SoundPresenter {
         storageRef = storage.getReference();
     }
 
-    public void getSoundURI(){
-        
-    }
+  /*  public void getSoundURI(){
+        storageRef.getDownloadUrl()
 
+    }
+*/
 
 
 
