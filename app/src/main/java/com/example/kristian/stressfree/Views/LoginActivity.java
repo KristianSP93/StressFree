@@ -45,7 +45,7 @@ public class LoginActivity extends AppCompatActivity implements LoginPresenter.C
                 }
             }
         });
-
+/*
         createUser.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -53,6 +53,7 @@ public class LoginActivity extends AppCompatActivity implements LoginPresenter.C
                 startActivity(intent);
             }
         });
+        */
 
         withoutlogin.setOnClickListener(new View.OnClickListener() {
             @Override

@@ -14,6 +14,7 @@ import android.widget.TextView;
 import com.example.kristian.stressfree.Models.Music;
 import com.example.kristian.stressfree.R;
 import com.example.kristian.stressfree.Views.SoundActivity;
+import com.google.android.gms.common.server.converter.StringToIntConverter;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.storage.FirebaseStorage;
@@ -21,6 +22,7 @@ import com.google.firebase.storage.StorageReference;
 
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.function.ToIntFunction;
 
 public class MusicAdapter extends BaseAdapter {
 
@@ -28,16 +30,36 @@ public class MusicAdapter extends BaseAdapter {
 
     private Context c;
     private int layout;
-    private ArrayList<Music> arrayList;
+   // private String[] Soundarray;
+     private ArrayList<Music> arrayList;
     private MediaPlayer mediaPlayer;
     private Boolean bool = true;
+/*
+    public MusicAdapter(Context c, int layout, String[] soundarray) {
+        this.c = c;
+        this.layout = layout;
+        Soundarray = soundarray;
+    }
 
+    public int getCount(){
+        return Soundarray.length;
+    }
 
+    public Object getItem(int position) {
+
+        return position;
+    }
+
+    public long getItemId(int position) {
+        return position;
+    }
+*/
 
     public MusicAdapter(Context c, int layout, ArrayList<Music> arrayList) {
         this.c = c;
         this.layout = layout;
         this.arrayList = arrayList;
+
     }
 
     @Override
@@ -55,6 +77,8 @@ public class MusicAdapter extends BaseAdapter {
         return 0;
     }
 
+
+
     public class ViewHolder{
         TextView txtSongName;
         TextView txtSinger;
@@ -62,6 +86,7 @@ public class MusicAdapter extends BaseAdapter {
         ImageView im_stop;
 
     }
+
 
 
     @Override
@@ -83,7 +108,7 @@ public class MusicAdapter extends BaseAdapter {
             viewHolder = (ViewHolder) view.getTag();
         }
 
-        final Music music = arrayList.get(position);
+       final Music music = arrayList.get(position);
         viewHolder.txtSongName.setText(music.getSongName());
         viewHolder.txtSinger.setText(music.getSinger());
 
@@ -94,12 +119,6 @@ public class MusicAdapter extends BaseAdapter {
             public void onClick(View view) {
                 if(bool)
                 {
-                    try {
-                        mediaPlayer.setDataSource("https://firebasestorage.googleapis.com/v0/b/stressfree-d7977.appspot.com/o/SoundMusic%2FLukas%20Graham%20-%20Mama%20Said.mp3?alt=media&token=5e7ec0e9-53a0-4067-b7f5-cc9b622e5c92");
-                    } catch (IOException e) {
-                        e.printStackTrace();
-                    }
-
                     mediaPlayer = MediaPlayer.create(c, music.getSong());
                     bool = false;
                 }
