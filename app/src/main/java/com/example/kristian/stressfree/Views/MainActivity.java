@@ -13,19 +13,21 @@ import android.widget.Toast;
 
 import com.example.kristian.stressfree.Presenters.MainPresenter;
 import com.example.kristian.stressfree.R;
+import com.example.kristian.stressfree.Utilities.Globals;
 import com.google.firebase.auth.FirebaseUser;
 
 
-public class MainActivity extends AppCompatActivity implements MainPresenter.Context{
+public class MainActivity extends AppCompatActivity implements MainPresenter.Context {
 
     private Button btpic, btvid, btmind, btsound, btstressfree, btmovement;
     static boolean active = false;
     private MainPresenter presenter;
+    private Globals g;
 
     @Override
     public void onBackPressed() {
         // If the user is logged in will show a dialog box with Yes/No and the user can choose to log out
-        if(presenter.IsUserLoggedIn()) {
+        if (presenter.IsUserLoggedIn()) {
             DialogInterface.OnClickListener dialogClickListener = new DialogInterface.OnClickListener() {
                 @Override
                 public void onClick(DialogInterface dialog, int which) {
@@ -34,7 +36,6 @@ public class MainActivity extends AppCompatActivity implements MainPresenter.Con
                             presenter.LogOut();
                             finish();
                             break;
-
                         case DialogInterface.BUTTON_NEGATIVE:
                             //No button clicked
                             break;
@@ -44,7 +45,7 @@ public class MainActivity extends AppCompatActivity implements MainPresenter.Con
             AlertDialog.Builder builder = new AlertDialog.Builder(this);
             builder.setMessage(R.string.LogafTekst).setPositiveButton(R.string.Ja, dialogClickListener)
                     .setNegativeButton(R.string.Nej, dialogClickListener).show();
-        } else{
+        } else {
             super.onBackPressed();
         }
     }
@@ -67,6 +68,7 @@ public class MainActivity extends AppCompatActivity implements MainPresenter.Con
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        g = new Globals(this);
 
         if (savedInstanceState != null) {
             // Get user  and save it. Not saved yet
@@ -75,9 +77,9 @@ public class MainActivity extends AppCompatActivity implements MainPresenter.Con
 
         // Initialising widgets
         btpic = findViewById(R.id.btnPictures);
-        btvid =  findViewById(R.id.btnVideos);
+        btvid = findViewById(R.id.btnVideos);
         btmind = findViewById(R.id.btnMindfulness);
-        btsound =  findViewById(R.id.btnSound);
+        btsound = findViewById(R.id.btnSound);
         btstressfree = findViewById(R.id.btnMyStressFree);
         btmovement = findViewById(R.id.btnMovement);
         presenter = new MainPresenter(this);
@@ -125,21 +127,10 @@ public class MainActivity extends AppCompatActivity implements MainPresenter.Con
         btstressfree.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                // Check if an user is logged in and if not show a toast
-                if(presenter.IsUserLoggedIn()){
-                    //Intent intent = new Intent(MainActivity.this, MyStressFreeActivity.class);
-                    Intent intent = new Intent(MainActivity.this, SettingsActivity.class);
-                    startActivity(intent);
-                } else{
-                    Toast.makeText(MainActivity.this, getResources().getString(R.string.BrugerLoggetind), Toast.LENGTH_LONG).show();
-                }
-
+                Intent intent = new Intent(MainActivity.this, MyStressFreeActivity.class);
+                startActivity(intent);
             }
         });
-
-
-
-
     }
 
     // creating action bar using menu from res
@@ -155,23 +146,18 @@ public class MainActivity extends AppCompatActivity implements MainPresenter.Con
         int id = item.getItemId();
 
         if (id == R.id.btSettings) {
-            Intent intent =  new Intent(MainActivity.this, SettingsActivity.class);
+            Intent intent = new Intent(MainActivity.this, SettingsActivity.class);
             startActivity(intent);
 
         }
         if (id == R.id.btLogoff) {
-            Intent intent = new Intent(MainActivity.this,MainActivity.class);
-            startActivity(intent);
+            if(g.IsUserLoggedIn()){
+                g.LogOut();
 
+            }
+            Intent intent = new Intent(MainActivity.this, LoginActivity.class);
+            startActivity(intent);
         }
         return false;
     }
-
-
-
-
-
-
-
-
 }

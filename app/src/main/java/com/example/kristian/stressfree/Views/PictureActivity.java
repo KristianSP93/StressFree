@@ -23,6 +23,7 @@ import com.example.kristian.stressfree.Presenters.MainPresenter;
 import com.example.kristian.stressfree.Presenters.PicturePresenter;
 import com.example.kristian.stressfree.R;
 import com.example.kristian.stressfree.Utilities.FullscreenPicActivity;
+import com.example.kristian.stressfree.Utilities.FullscreenVidActivity;
 import com.example.kristian.stressfree.Utilities.Globals;
 import com.example.kristian.stressfree.Utilities.ImageAdapter;
 import com.google.android.gms.tasks.OnFailureListener;
@@ -71,7 +72,6 @@ public class PictureActivity extends OptionsMenu implements PicturePresenter.Con
                 } else {
                 Toast.makeText(PictureActivity.this, "Error", Toast.LENGTH_LONG).show();
                 }
-
             }
         });
 

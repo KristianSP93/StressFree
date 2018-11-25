@@ -83,6 +83,34 @@
     <string name="Sværhedsgrad">Sværhedsgrad</string>
     <string name="Øvelsesbeskrivelse">Øvelsesbeskrivelse</string>
     <string name="Ok">Ok</string>
+    <string name="Skulderløft">Skulderløft – arm-abduktioner</string>
+    <string name="Skulderløft_Beskrivelse">Øvelsen kan laves siddende eller stående. Med en let håndvægt eller vandflaske i hver hånd føres armene ud til siden, til de er vandrette. Håndryggen skal pege opad, og albuerne skal være let bøjede.</string>
+    <string name="Armstrækninger">Armstrækninger</string>
+    <string name="Armstrækninger_beskrivelse">Stående med ansigtet mod en væg og i lige godt en arms afstand fra væggen sættes håndfladerne mod væggen i skulderhøjde. Albuerne bøjes, så næsen næsten rører væggen – albuerne strækkes igen.</string>
+    <string name="Stepups">Step-ups</string>
+    <string name="Stepups_beskrivelse">Der trædes op med et ben på et trappetrin eller en lav skammel. Der trædes op, så den anden fod lige sættes på trinnet og straks efter sættes ned igen. Den forreste fod holdes på trinnet, indtil det fastsatte antal gentagelser er gennemført. Herefter sættes den anden fod på trinnet.</string>
+    <string name="Squats">Squats/benbøjninger</string>
+    <string name="Squats_beskrivelse">Stående med ryggen til en stol sætter man sig ned på stolen, men uden at sætte sig helt ned på sædet. Når man har bevæget sig så langt ned, som balancen tillader, retter man sig op igen. Hænderne holdes i siden eller frem foran kroppen.</string>
+    <string name="Mavebøjninger">Mavebøjninger</string>
+    <string name="Mavebøjninger_beskrivelse">Lig på ryggen på gulvet med en bøjning i hofte- og knæled og fodsålerne fladt i gulvet. Armene lægges på kryds over brystet. Hoved og skuldre løftes fra gulvet.</string>
+    <string name="GåPåStedet">Gå på stedet</string>
+    <string name="GåPåStedet_beskrivelse">Hvis du er sidende, rejs dig og gå på stedet i 60 sekunder.</string>
+    <string name="GåEnTur">Gå en tur</string>
+    <string name="GåEnTur_beskrivelse">Hvis du er sidende, rejs dig op og gå en tur på 5-10 minutter. Dette kan eventuelt gøres udenfor for ekstra afslapning.</string>
+    <string name="HurtigUdstrækning">Hurtig udstrækning</string>
+    <string name="HurtigUdstrækning_beskrivelse">Sidende eller stående, tag begge arme over hoved og bevæg overkroppen over til den ene side til et stræk mærkes ned langs den modsatte side. Denne position holdes så længe det er muligt. Gør herefter det samme med modsatte side.</string>
+    <string name="RygUdstrækning">Ryg udstrækning</string>
+    <string name="RygUdstrækning_beskrivelse">Hvis du er sidende, rejs dig op. Bøj nu din overkrop fremover og ræk ud efter dine tæer med så strakte ben som muligt. Hold denne position i 30-60 sekunder.</string>
+    <string name="Løb5km">Løb 5 km</string>
+    <string name="Løb5km_beskrivelse">Så er det på med løbetøjet og løbeskoene. Det er nu tid til at løbe 5 km. Dette kan gøres enten udenfor eller på et løbebånd. Det er helt op til dig selv.</string>
+    <string name="Løb10km">Løb 10 km</string>
+    <string name="Løb10km_beskrivelse">Så er det på med løbetøjet og løbeskoene. Det er nu tid til at løbe 10 km. Dette kan gøres enten udenfor eller på et løbebånd. Det er helt op til dig selv.</string>
+    <string name="armbøjninger50">50 Armbøjninger</string>
+    <string name="armbøjninger50_beskrivelse">Placer dig selv på gulvet med strakte arme og strakte ben. Bøj nu i albuerne så kroppen bevæger sig op og ned mod gulvet. Udfør denne øvelse til du har nået 50 styk. Der må gerne holdes korte pauser imellem.</string>
+    <string name="HøjeKnæløft">Høje Knæløft</string>
+    <string name="HøjeKnæløft_beskrivelse">Det er lidt som at løbe på stedet, du løfter i stedet bare dine knæ højt op, så de er helt vandrette. Spænd godt op i din core, mens du spurter derudaf med de høje knæ, så giver det lidt ekstra til maven også. Lav så mange der er muligt på 45 sekunder</string>
+    <string name="Upload">Upload</string>
+    <string name="VælgBillede">Vælg Billede</string>
 
 
 </resources>

@@ -6,27 +6,36 @@
     android:layout_height="match_parent"
     tools:context=".Views.MindfulnessActivity">
 
-    <ListView
-        android:id="@+id/lwMindfulness"
-        android:layout_width="wrap_content"
-        android:layout_height="442dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginTop="8dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView" />
-
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/tvMindfulness"
         android:layout_width="326dp"
-        android:layout_height="51dp"
+        android:layout_height="36dp"
         android:layout_marginStart="8dp"
         android:layout_marginLeft="8dp"
         android:layout_marginTop="8dp"
         android:text="@string/VælgMindfulness"
-        android:textSize="20dp"
+        android:textColor="@android:color/black"
+        android:textSize="20sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+
+    <GridView
+        android:id="@+id/gridViewMindful"
+        android:layout_width="match_parent"
+        android:layout_height="441dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginBottom="8dp"
+        android:adjustViewBounds="true"
+        android:numColumns="3"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvMindfulness" />
 </android.support.constraint.ConstraintLayout>
 
 
