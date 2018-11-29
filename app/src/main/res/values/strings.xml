@@ -111,6 +111,13 @@
     <string name="HøjeKnæløft_beskrivelse">Det er lidt som at løbe på stedet, du løfter i stedet bare dine knæ højt op, så de er helt vandrette. Spænd godt op i din core, mens du spurter derudaf med de høje knæ, så giver det lidt ekstra til maven også. Lav så mange der er muligt på 45 sekunder</string>
     <string name="Upload">Upload</string>
     <string name="VælgBillede">Vælg Billede</string>
+    <string name="Uploader">Uploader...</string>
+    <string name="UploadSuccesfuld">Upload succesfuld</string>
+    <string name="UploadFejlede">Upload Fejlede</string>
+    <string name="valgtBillede">Valgt billede</string>
+    <string name="SikkerPåSlet">Er du sikker på du vil slette det valgte billede?</string>
+    <string name="VentVenligst">Vent venligst</string>
+    <string name="HenterData">Henter data...</string>
 
 
 </resources>

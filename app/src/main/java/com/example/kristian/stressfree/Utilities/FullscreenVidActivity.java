@@ -1,10 +1,14 @@
 package com.example.kristian.stressfree.Utilities;
 
+import android.app.Activity;
+import android.app.ProgressDialog;
 import android.content.Intent;
+import android.media.MediaPlayer;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
+import android.view.KeyEvent;
 import android.widget.MediaController;
 import android.widget.VideoView;
 
@@ -15,6 +19,7 @@ public class FullscreenVidActivity extends AppCompatActivity {
     private String stringUri;
     private VideoView videoView;
     private MediaController mediaController;
+    private ProgressDialog progDailog;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -35,8 +40,20 @@ public class FullscreenVidActivity extends AppCompatActivity {
         videoView.setVideoURI(uri);
         videoView.setMediaController(mediaController);
         mediaController.setAnchorView(videoView);
-        mediaController.show(0);
-        videoView.start();
+
+        progDailog = ProgressDialog.show(this, getResources().getString(R.string.VentVenligst), getResources().getString(R.string.HenterData), true);
+
+        videoView.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
+
+            public void onPrepared(MediaPlayer mp) {
+                progDailog.dismiss();
+                videoView.start();
+            }
+        });
     }
 
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+    }
 }

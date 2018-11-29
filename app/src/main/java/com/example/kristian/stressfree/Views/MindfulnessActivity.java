@@ -16,7 +16,7 @@ import com.example.kristian.stressfree.R;
 import com.example.kristian.stressfree.Utilities.FullscreenVidActivity;
 import com.example.kristian.stressfree.Utilities.ImageAdapter;
 
-public class MindfulnessActivity extends OptionsMenu {
+public class MindfulnessActivity extends OptionsMenu implements MindfulnessPresenter.Context{
 
     private MindfulnessPresenter presenter;
     private GridView gridView;
@@ -31,7 +31,7 @@ public class MindfulnessActivity extends OptionsMenu {
         mindfulnessList = presenter.getMindfullList();
         mindfulnessThumbnail = presenter.getMindfullThumbnail();
 
-        gridView = findViewById(R.id.gridViewVideos);
+        gridView = findViewById(R.id.gridViewMindful);
         gridView.setAdapter(new ImageAdapter(MindfulnessActivity.this, mindfulnessThumbnail));
 
         gridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
