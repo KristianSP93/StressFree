@@ -120,6 +120,22 @@ public class MyStressFreePresenter {
     }
 
     public void DeleteSelectedImage(int Position){
+
+        StorageReference photoRef = storage.getReferenceFromUrl(myPictureArray.get(Position));
+        photoRef.delete().addOnSuccessListener(new OnSuccessListener<Void>() {
+            @Override
+            public void onSuccess(Void aVoid) {
+                // File deleted successfully
+                Log.d(LOG, "onSuccess: deleted file");
+            }
+        }).addOnFailureListener(new OnFailureListener() {
+            @Override
+            public void onFailure(@NonNull Exception exception) {
+                // Uh-oh, an error occurred!
+                Log.d(LOG, "onFailure: did not delete file");
+            }
+        });
+
         myPictureArray.remove(Position);
         uploadSharedPreferences();
         view.setGridView(myPictureArray);

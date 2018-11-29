@@ -79,7 +79,7 @@
     <string name="Lav">Lav</string>
     <string name="Middel">Middel</string>
     <string name="Høj">Høj</string>
-    <string name="Øvelsesnavn">Øvelsesnavn</string>
+    <string name="Øvelsesnavn">Øvelses navn</string>
     <string name="Sværhedsgrad">Sværhedsgrad</string>
     <string name="Øvelsesbeskrivelse">Øvelsesbeskrivelse</string>
     <string name="Ok">Ok</string>
@@ -100,16 +100,14 @@
     <string name="HurtigUdstrækning">Hurtig udstrækning</string>
     <string name="HurtigUdstrækning_beskrivelse">Sidende eller stående, tag begge arme over hoved og bevæg overkroppen over til den ene side til et stræk mærkes ned langs den modsatte side. Denne position holdes så længe det er muligt. Gør herefter det samme med modsatte side.</string>
     <string name="RygUdstrækning">Ryg udstrækning</string>
-    <string name="RygUdstrækning_beskrivelse">Hvis du er sidende, rejs dig op. Bøj nu din overkrop fremover og ræk ud efter dine tæer med så strakte ben som muligt. Hold denne position i 30-60 sekunder.</string>
+    <string name="RygUdstrækning_beskrivelse">Hvis du er siddende, rejs dig op. Bøj nu din overkrop fremover og ræk ud efter dine tæer med så strakte ben som muligt. Hold denne position i 30-60 sekunder.</string>
     <string name="Løb5km">Løb 5 km</string>
-    <string name="Løb5km_beskrivelse">Så er det på med løbetøjet og løbeskoene. Det er nu tid til at løbe 5 km. Dette kan gøres enten udenfor eller på et løbebånd. Det er helt op til dig selv.</string>
     <string name="Løb10km">Løb 10 km</string>
     <string name="Løb10km_beskrivelse">Så er det på med løbetøjet og løbeskoene. Det er nu tid til at løbe 10 km. Dette kan gøres enten udenfor eller på et løbebånd. Det er helt op til dig selv.</string>
     <string name="armbøjninger50">50 Armbøjninger</string>
     <string name="armbøjninger50_beskrivelse">Placer dig selv på gulvet med strakte arme og strakte ben. Bøj nu i albuerne så kroppen bevæger sig op og ned mod gulvet. Udfør denne øvelse til du har nået 50 styk. Der må gerne holdes korte pauser imellem.</string>
     <string name="HøjeKnæløft">Høje Knæløft</string>
     <string name="HøjeKnæløft_beskrivelse">Det er lidt som at løbe på stedet, du løfter i stedet bare dine knæ højt op, så de er helt vandrette. Spænd godt op i din core, mens du spurter derudaf med de høje knæ, så giver det lidt ekstra til maven også. Lav så mange der er muligt på 45 sekunder</string>
-    <string name="Upload">Upload</string>
     <string name="VælgBillede">Vælg Billede</string>
     <string name="Uploader">Uploader...</string>
     <string name="UploadSuccesfuld">Upload succesfuld</string>
@@ -118,6 +116,10 @@
     <string name="SikkerPåSlet">Er du sikker på du vil slette det valgte billede?</string>
     <string name="VentVenligst">Vent venligst</string>
     <string name="HenterData">Henter data...</string>
+    <string name="Løb5km_beskrivelse">Så er det på med løbetøjet og løbeskoene. Det er nu tid til at løbe 5 km. Dette kan gøres enten udenfor eller på et løbebånd. Det er helt op til dig selv.</string>
+    <string name="Upload">Upload</string>
+    <string name="IndtastEmail">Indtast e-mail</string>
+    <string name="Send">Send</string>
 
 
 </resources>

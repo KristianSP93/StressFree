@@ -127,8 +127,25 @@ public class MainActivity extends AppCompatActivity implements MainPresenter.Con
         btstressfree.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(MainActivity.this, MyStressFreeActivity.class);
-                startActivity(intent);
+                if(g.IsUserLoggedIn()){
+                    Intent intent = new Intent(MainActivity.this, MyStressFreeActivity.class);
+                    startActivity(intent);
+                } else{
+                    DialogInterface.OnClickListener dialogClickListener = new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialog, int which) {
+                            switch (which){
+                                case DialogInterface.BUTTON_POSITIVE:
+                                    //Yes button clicked
+                                    break;
+                            }
+                        }
+                    };
+                    android.app.AlertDialog.Builder builder = new android.app.AlertDialog.Builder(MainActivity.this);
+                    builder.setMessage(R.string.BrugerLoggetind).setPositiveButton(R.string.Ok, dialogClickListener);
+                    builder.show();
+                }
+
             }
         });
     }
@@ -143,21 +160,41 @@ public class MainActivity extends AppCompatActivity implements MainPresenter.Con
     // open settings from this activity
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        int id = item.getItemId();
 
-        if (id == R.id.btSettings) {
-            Intent intent = new Intent(MainActivity.this, SettingsActivity.class);
-            startActivity(intent);
+        if(g.IsUserLoggedIn()){
+            int id = item.getItemId();
 
-        }
-        if (id == R.id.btLogoff) {
-            if(g.IsUserLoggedIn()){
-                g.LogOut();
+            if (id == R.id.btSettings) {
+                Intent intent = new Intent(MainActivity.this, SettingsActivity.class);
+                startActivity(intent);
 
             }
-            Intent intent = new Intent(MainActivity.this, LoginActivity.class);
-            startActivity(intent);
+            if (id == R.id.btLogoff) {
+                if(g.IsUserLoggedIn()){
+                    g.LogOut();
+
+                }
+                Intent intent = new Intent(MainActivity.this, LoginActivity.class);
+                startActivity(intent);
+            }
+            return false;
+        } else{
+            DialogInterface.OnClickListener dialogClickListener = new DialogInterface.OnClickListener() {
+                @Override
+                public void onClick(DialogInterface dialog, int which) {
+                    switch (which){
+                        case DialogInterface.BUTTON_POSITIVE:
+                            //Yes button clicked
+                            break;
+                    }
+                }
+            };
+            android.app.AlertDialog.Builder builder = new android.app.AlertDialog.Builder(MainActivity.this);
+            builder.setMessage(R.string.BrugerLoggetind).setPositiveButton(R.string.Ok, dialogClickListener);
+            builder.show();
+            return false;
         }
-        return false;
+
+
     }
 }

@@ -1,9 +1,15 @@
 package com.example.kristian.stressfree.Presenters;
 
+import android.app.Activity;
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.support.annotation.NonNull;
+import android.text.InputType;
 import android.util.Log;
+import android.widget.EditText;
 
 import com.example.kristian.stressfree.Models.User;
+import com.example.kristian.stressfree.R;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
@@ -14,6 +20,8 @@ public class LoginPresenter {
 
     private User user;
     private Context view;
+    private String forgot_password = "";
+    private Activity activity;
 
     private FirebaseAuth mAuth;
     private String LOGINPRESENTER = "LOG IN PRESENTER";
@@ -21,6 +29,8 @@ public class LoginPresenter {
     public LoginPresenter(Context view) {
         this.user = new User();
         this.view = view;
+        activity = (Activity) view;
+
         mAuth = FirebaseAuth.getInstance();
     }
 
@@ -46,21 +56,49 @@ public class LoginPresenter {
     }
 
     public void forgotPassword() {
-        if(!view.getMail().isEmpty()) {
-            mAuth.sendPasswordResetEmail(view.getMail())
-                    .addOnCompleteListener(new OnCompleteListener<Void>() {
-                        @Override
-                        public void onComplete(@NonNull Task<Void> task) {
-                            if (task.isSuccessful()) {
-                                view.forgotPasswordSucces();
-                            } else {
-                                view.enterMail();
-                            }
-                        }
-                    });
-        } else{
-            view.enterMail();
-        }
+
+        // Created from https://stackoverflow.com/questions/10903754/input-text-dialog-android with the comment from Aaron.
+        AlertDialog.Builder builder = new AlertDialog.Builder(activity);
+        builder.setTitle(activity.getResources().getString(R.string.IndtastEmail));
+
+
+        final EditText input = new EditText(activity);
+
+        input.setInputType(InputType.TYPE_CLASS_TEXT | InputType.TYPE_CLASS_TEXT);
+        builder.setView(input);
+
+        builder.setPositiveButton(activity.getResources().getString(R.string.Send), new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                forgot_password = input.getText().toString();
+                if(!forgot_password.isEmpty()) {
+                    mAuth.sendPasswordResetEmail(forgot_password)
+                            .addOnCompleteListener(new OnCompleteListener<Void>() {
+                                @Override
+                                public void onComplete(@NonNull Task<Void> task) {
+                                    if (task.isSuccessful()) {
+                                        view.forgotPasswordSucces();
+                                    } else {
+                                        view.enterMail();
+                                    }
+                                }
+                            });
+                } else{
+                    view.enterMail();
+                }
+            }
+        });
+        builder.setNegativeButton(activity.getResources().getString(R.string.Annuller), new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                forgot_password = "";
+                dialog.cancel();
+            }
+        });
+
+        builder.show();
+
+
     }
 
     public void withoutLogin() {
