@@ -73,4 +73,31 @@ public class VideoActivity extends OptionsMenu implements VideoPresenter.Context
         });
 
     }
+
+
+    public void setAdapter(){
+        if(flip == 1){
+            gridView.setAdapter(new ImageAdapter(   VideoActivity.this, natureThumbnail));
+        } else if (flip == 2){
+            gridView.setAdapter(new ImageAdapter(   VideoActivity.this, animalThumbnail));
+        }
+    }
+
+    @Override
+    protected void onSaveInstanceState(Bundle outState) {
+        super.onSaveInstanceState(outState);
+        outState.putInt("FlipValue", flip);
+    }
+
+    @Override
+    protected void onRestoreInstanceState(Bundle savedInstanceState) {
+        super.onRestoreInstanceState(savedInstanceState);
+        flip = savedInstanceState.getInt("FlipValue", flip);
+    }
+
+    @Override
+    protected void onPostResume() {
+        super.onPostResume();
+        setAdapter();
+    }
 }

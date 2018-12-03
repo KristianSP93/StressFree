@@ -28,6 +28,7 @@ public class MovementActivity extends OptionsMenu implements MovementPresenter.C
     private TextView twName, twDiff;
     private ArrayList<Exercise> currentList, exerciseListLow, exerciseListMedium, exerciseListHigh;
     private MovementPresenter presenter;
+    private int flip = 0;
 
 
     @Override
@@ -72,6 +73,7 @@ public class MovementActivity extends OptionsMenu implements MovementPresenter.C
             @Override
             public void onClick(View view) {
                 showTextViews();
+                flip = 1;
                 currentList = exerciseListLow;
                 listView.setAdapter(new MovementAdapter(MovementActivity.this, currentList));
             }
@@ -81,6 +83,7 @@ public class MovementActivity extends OptionsMenu implements MovementPresenter.C
             @Override
             public void onClick(View view) {
                 showTextViews();
+                flip = 2;
                 currentList = exerciseListMedium;
                 listView.setAdapter(new MovementAdapter(MovementActivity.this, currentList));
             }
@@ -90,6 +93,7 @@ public class MovementActivity extends OptionsMenu implements MovementPresenter.C
             @Override
             public void onClick(View view) {
                 showTextViews();
+                flip = 3;
                 currentList = exerciseListHigh;
                 listView.setAdapter(new MovementAdapter(MovementActivity.this, currentList));
             }
@@ -100,6 +104,34 @@ public class MovementActivity extends OptionsMenu implements MovementPresenter.C
     public void showTextViews() {
         twName.setVisibility(View.VISIBLE);
         twDiff.setVisibility(View.VISIBLE);
+    }
+
+    public void setAdapter(){
+        if(flip == 1){
+            listView.setAdapter(new MovementAdapter(MovementActivity.this, exerciseListLow));
+        } else if (flip == 2){
+            listView.setAdapter(new MovementAdapter(MovementActivity.this, exerciseListMedium));
+        } else if(flip == 3){
+            listView.setAdapter(new MovementAdapter(MovementActivity.this, exerciseListHigh));
+        }
+    }
+
+    @Override
+    protected void onSaveInstanceState(Bundle outState) {
+        super.onSaveInstanceState(outState);
+        outState.putInt("FlipValue", flip);
+    }
+
+    @Override
+    protected void onRestoreInstanceState(Bundle savedInstanceState) {
+        super.onRestoreInstanceState(savedInstanceState);
+        flip = savedInstanceState.getInt("FlipValue", flip);
+    }
+
+    @Override
+    protected void onPostResume() {
+        super.onPostResume();
+        setAdapter();
     }
 
 

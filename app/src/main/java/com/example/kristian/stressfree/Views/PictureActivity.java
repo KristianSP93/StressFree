@@ -43,12 +43,13 @@ public class PictureActivity extends OptionsMenu implements PicturePresenter.Con
     private PicturePresenter presenter;
     private Button btAnimals, btNature;
     private String[] mNatureUris, mAnimalUris;
-    private int flip = 0;
+    private int flip;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_picture);
+
         presenter = new PicturePresenter(this);
 
         mAnimalUris = presenter.getAnimalURIarray();
@@ -92,5 +93,30 @@ public class PictureActivity extends OptionsMenu implements PicturePresenter.Con
         });
     }
 
+    public void setAdapter(){
+        if(flip == 1){
+            gridview.setAdapter(new ImageAdapter(   PictureActivity.this, mAnimalUris));
+        } else if (flip == 2){
+            gridview.setAdapter(new ImageAdapter(   PictureActivity.this, mNatureUris));
+        }
+    }
+
+    @Override
+    protected void onSaveInstanceState(Bundle outState) {
+        super.onSaveInstanceState(outState);
+        outState.putInt("FlipValue", flip);
+    }
+
+    @Override
+    protected void onRestoreInstanceState(Bundle savedInstanceState) {
+        super.onRestoreInstanceState(savedInstanceState);
+        flip = savedInstanceState.getInt("FlipValue", flip);
+    }
+
+    @Override
+    protected void onPostResume() {
+        super.onPostResume();
+        setAdapter();
+    }
 
 }
