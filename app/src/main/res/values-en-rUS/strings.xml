@@ -27,7 +27,7 @@
     <string name="Korrektmail">Enter the correct e-mail and try again</string>
     <string name="Annuller">Cancel</string>
     <string name="EnsKode">Password is not the same</string>
-    <string name="GodkendelseFejlede">There was a problem creating user. Please try again later.</string>
+    <string name="GodkendelseFejlede">There was a problem creating user. Check to see if they email is correct or please try again later.</string>
     <string name="Musik">Music</string>
     <string name="Natur">Nature</string>
     <string name="Dyr">Animals</string>
@@ -66,7 +66,7 @@
     <string name="Squats_beskrivelse">Standing with the back against a chair, you sit down on the chair, but without sitting down on the seat. Once you have moved as far down as the balance allows you, get up again. The hands are held at your side.</string>
     <string name="Mavebøjninger">Sit ups</string>
     <string name="Mavebøjninger_beskrivelse">Lie on the back of the floor with a bend in the hip and knee joint and the soles of the feet flat in the floor. The arms are placed across the chest. Head and shoulders lifted from the floor.</string>
-    <string name="GåPåStedet">Walk on the si</string>
+    <string name="GåPåStedet">Walk on site</string>
     <string name="GåPåStedet_beskrivelse">If you are sitting, stand up and start walking while standing in the same place for 60 seconds.</string>
     <string name="GåEnTur">Go for a walk</string>
     <string name="GåEnTur_beskrivelse">If you are sitting, stand up and go for a walk for about 5-10 minuttes. This can be done outside for extra relaxation.</string>
@@ -95,4 +95,6 @@
     <string name="dummy_content">DUMMY CONTENT</string>
     <string name="IndtastEmail">Enter your email</string>
     <string name="Send">Send</string>
+    <string name="EmailEllerKodeTom">The Email or Password field is blank. Fill out this field with the correct information in order to log in.</string>
+    <string name="UdfyldAlt">Fill in all fields to create a user.</string>
 </resources>

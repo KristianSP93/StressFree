@@ -108,10 +108,13 @@ public class MovementActivity extends OptionsMenu implements MovementPresenter.C
 
     public void setAdapter(){
         if(flip == 1){
+            showTextViews();
             listView.setAdapter(new MovementAdapter(MovementActivity.this, exerciseListLow));
         } else if (flip == 2){
+            showTextViews();
             listView.setAdapter(new MovementAdapter(MovementActivity.this, exerciseListMedium));
         } else if(flip == 3){
+            showTextViews();
             listView.setAdapter(new MovementAdapter(MovementActivity.this, exerciseListHigh));
         }
     }

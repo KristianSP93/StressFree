@@ -34,7 +34,7 @@
     <string name="Korrektmail">Indtast korrekt E-mail og prøv igen</string>
     <string name="Annuller">Annuller</string>
     <string name="EnsKode">Kodeord er ikke det samme</string>
-    <string name="GodkendelseFejlede">Der opstod et problem ved oprettelse af bruger. Prøv igen senere.</string>
+    <string name="GodkendelseFejlede">Der opstod et problem ved oprettelse af bruger. Tjek at email er korrekt eller prøv igen senere.</string>
     <!--Login Activity -->
 
 
@@ -120,6 +120,8 @@
     <string name="Upload">Upload</string>
     <string name="IndtastEmail">Indtast e-mail</string>
     <string name="Send">Send</string>
+    <string name="EmailEllerKodeTom">Feltet for E-mail eller kodeord et tomt. Udfyld dette felt med korrekt information for at kunne logge ind.</string>
+    <string name="UdfyldAlt">Udfyld alle felter for at kunne oprette en bruger.</string>
 
 
 </resources>

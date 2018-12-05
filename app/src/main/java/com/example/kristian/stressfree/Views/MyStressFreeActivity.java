@@ -53,12 +53,11 @@ public class MyStressFreeActivity extends OptionsMenu implements MyStressFreePre
 
     public Uri filePath;
     private Button btupload, btchoose;
-
+    private Globals globals;
 
     private GridView gridView;
     private ImageView imageView;
     final private String LOG = "MYSTRESSFREEACTIVITY";
-    final private String GETSHARED = "GETSHAREDSTRESSFREE";
     private ArrayList<String> LocalPictureArray;
 
     private final int PICK_IMAGE_REQUEST = 71;
@@ -75,7 +74,7 @@ public class MyStressFreeActivity extends OptionsMenu implements MyStressFreePre
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_my_stress_free);
         presenter = new MyStressFreePresenter(this);
-
+        globals = new Globals(this);
 
         // Firebase initializaion
         storage = FirebaseStorage.getInstance();
@@ -84,7 +83,10 @@ public class MyStressFreeActivity extends OptionsMenu implements MyStressFreePre
         // Shared Preferences init
         sp = getPreferences(Context.MODE_PRIVATE);
         try {
-            LocalPictureArray = new ArrayList<>(Arrays.asList(sp.getString(GETSHARED, "").split(",")));
+            LocalPictureArray = new ArrayList<>(Arrays.asList(sp.getString(globals.getEmail(), "").split(",")));
+            if(LocalPictureArray.get(0).isEmpty()){
+                LocalPictureArray.remove(0);
+            }
             presenter.setMyPictureArray(LocalPictureArray);
         } catch (Exception e) {
             Log.d(LOG, "onCreate: " + e.getMessage());
@@ -126,7 +128,7 @@ public class MyStressFreeActivity extends OptionsMenu implements MyStressFreePre
                 DialogInterface.OnClickListener dialogClickListener = new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
-                        switch (which){
+                        switch (which) {
                             case DialogInterface.BUTTON_POSITIVE:
                                 //Yes button clicked
                                 presenter.DeleteSelectedImage(position);
@@ -167,8 +169,4 @@ public class MyStressFreeActivity extends OptionsMenu implements MyStressFreePre
         s = pictureArray.toArray(s);
         gridView.setAdapter(new ImageAdapter(MyStressFreeActivity.this, s));
     }
-
-
-
-
 }

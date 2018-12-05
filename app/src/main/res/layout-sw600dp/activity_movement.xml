@@ -9,7 +9,7 @@
     <TableRow
         android:id="@+id/tableRow2"
         android:layout_width="match_parent"
-        android:layout_height="124dp"
+        android:layout_height="181dp"
         android:gravity="center"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -18,41 +18,41 @@
         <Button
             android:id="@+id/btMovLow"
             style="@style/Widget.AppCompat.Button.Colored"
-            android:layout_width="115dp"
-            android:layout_height="115dp"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
             android:layout_marginStart="8dp"
             android:layout_marginLeft="8dp"
             android:layout_marginTop="8dp"
             android:background="@android:color/holo_orange_light"
             android:text="@string/Lav"
             android:textAppearance="@style/TextAppearance.AppCompat.Display2"
-            android:textSize="30sp"
+            android:textSize="36sp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
         <Button
             android:id="@+id/btMovMedium"
             style="@style/Widget.AppCompat.Button.Colored"
-            android:layout_width="115dp"
-            android:layout_height="115dp"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
             android:layout_marginTop="8dp"
             android:background="@android:color/holo_orange_dark"
             android:text="@string/Middel"
             android:textAppearance="@style/TextAppearance.AppCompat.Display2"
-            android:textSize="30sp"
+            android:textSize="36sp"
             app:layout_constraintStart_toEndOf="@+id/btMovLow"
             app:layout_constraintTop_toTopOf="parent" />
 
         <Button
             android:id="@+id/btMovHigh"
             style="@style/Widget.AppCompat.Button.Colored"
-            android:layout_width="115dp"
-            android:layout_height="115dp"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
             android:layout_marginTop="8dp"
             android:background="@android:color/holo_red_light"
             android:text="@string/Høj"
             android:textAppearance="@style/TextAppearance.AppCompat.Display2"
-            android:textSize="30sp"
+            android:textSize="36sp"
             app:layout_constraintStart_toEndOf="@+id/btMovMedium"
             app:layout_constraintTop_toTopOf="parent" />
     </TableRow>
@@ -60,31 +60,40 @@
 
     <ListView
         android:id="@+id/movementListView"
-        android:layout_width="381dp"
-        android:layout_height="365dp"
+        android:layout_width="599dp"
+        android:layout_height="641dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginBottom="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="0.466"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/twExerciseName" />
+        app:layout_constraintTop_toBottomOf="@+id/twExerciseName"
+        app:layout_constraintVertical_bias="0.0" />
 
     <TextView
         android:id="@+id/twExerciseName"
-        android:layout_width="90dp"
-        android:layout_height="19dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginLeft="8dp"
         android:text="@string/Øvelsesnavn"
+        android:textSize="30sp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tableRow2" />
 
     <TextView
         android:id="@+id/twExerciseDifficulty"
-        android:layout_width="96dp"
-        android:layout_height="19dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_marginEnd="8dp"
         android:layout_marginRight="8dp"
         android:text="@string/Sværhedsgrad"
+        android:textSize="30sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tableRow2" />

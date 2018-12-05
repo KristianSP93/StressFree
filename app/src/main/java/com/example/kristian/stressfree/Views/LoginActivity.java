@@ -38,22 +38,22 @@ public class LoginActivity extends AppCompatActivity implements LoginPresenter.C
         logind.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if(email.getText().toString() == "" || kodeord.getText().toString() == ""){
-
+                if(email.getText().toString().isEmpty() || kodeord.getText().toString().isEmpty()){
+                    Toast.makeText(LoginActivity.this, getResources().getString(R.string.EmailEllerKodeTom), Toast.LENGTH_LONG).show();
                 } else {
                     presenter.signin(email.getText().toString(), kodeord.getText().toString());
                 }
             }
         });
-/*
+
         createUser.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(LoginActivity.this, SoundPresenter.CreateUserActivity.class);
+                Intent intent = new Intent(LoginActivity.this, CreateUserActivity.class);
                 startActivity(intent);
             }
         });
-        */
+
 
         withoutlogin.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -73,15 +73,7 @@ public class LoginActivity extends AppCompatActivity implements LoginPresenter.C
             email.setText(savedInstanceState.getString(STATE_EMAIL, ""));
             kodeord.setText(savedInstanceState.getString(STATE_PASSWORD, ""));
         }
-
-
-        // HUSK AT SLETTE!!!!
-        //////////////////////////////////////////////////////////////////////////////////////////
-        //////////////////////////////////////////////////////////////////////////////////////////
-        email.setText("test10@gmail.com");
-        kodeord.setText("Test123");
-        //////////////////////////////////////////////////////////////////////////////////////////
-        //////////////////////////////////////////////////////////////////////////////////////////
+        
     }
 
     @Override

@@ -51,7 +51,9 @@ public class Globals {
         }
     }
 
-
+    public String getEmail(){
+        return mAuth.getCurrentUser().getEmail();
+    }
 
 
 

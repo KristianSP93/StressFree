@@ -6,9 +6,6 @@
     android:layout_height="match_parent"
     tools:context=".Views.CreateUserActivity">
 
-
-
-
     <EditText
         android:id="@+id/editName"
         android:layout_width="wrap_content"
@@ -87,6 +84,7 @@
         android:text="@string/Annuller"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
+
 
 
 </android.support.constraint.ConstraintLayout>

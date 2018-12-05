@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Views.MainActivity">
+
+
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center">
+
+            <Button
+                android:id="@+id/btnMindfulness"
+                style="@style/Widget.AppCompat.Button.Colored"
+                android:layout_width="250dp"
+                android:layout_height="200dp"
+                android:layout_marginStart="4dp"
+                android:layout_marginLeft="4dp"
+                android:layout_marginTop="8dp"
+                android:background="@android:color/holo_blue_bright"
+                android:text="@string/Mindfulness"
+                android:textAppearance="@style/TextAppearance.AppCompat.Display2"
+                android:textSize="36sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <Button
+                android:id="@+id/btnPictures"
+                style="@style/Widget.AppCompat.Button.Colored"
+                android:layout_width="250dp"
+                android:layout_height="200dp"
+                android:layout_marginStart="4dp"
+                android:layout_marginLeft="4dp"
+                android:layout_marginTop="8dp"
+                android:background="@android:color/holo_orange_light"
+                android:text="@string/Billeder"
+                android:textAppearance="@style/TextAppearance.AppCompat.Display2"
+                android:textSize="36sp"
+                app:layout_constraintStart_toEndOf="@+id/btnMindfulness"
+                app:layout_constraintTop_toTopOf="parent" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center">
+
+            <Button
+                android:id="@+id/btnSound"
+                style="@style/Widget.AppCompat.Button.Colored"
+                android:layout_width="250dp"
+                android:layout_height="200dp"
+                android:layout_marginStart="4dp"
+                android:layout_marginLeft="4dp"
+                android:layout_marginTop="8dp"
+                android:background="@android:color/holo_orange_dark"
+                android:text="@string/Lyd"
+                android:textAppearance="@style/TextAppearance.AppCompat.Display2"
+                android:textSize="36sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/btnMindfulness" />
+
+            <Button
+                android:id="@+id/btnVideos"
+                style="@style/Widget.AppCompat.Button.Colored"
+                android:layout_width="250dp"
+                android:layout_height="200dp"
+                android:layout_marginStart="4dp"
+                android:layout_marginLeft="4dp"
+                android:layout_marginTop="8dp"
+                android:background="@android:color/holo_green_light"
+                android:text="@string/Videoer"
+                android:textAppearance="@style/TextAppearance.AppCompat.Display2"
+                android:textSize="36sp"
+                app:layout_constraintStart_toEndOf="@+id/btnMovement"
+                app:layout_constraintTop_toBottomOf="@+id/btnPictures" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center">
+
+            <Button
+                android:id="@+id/btnMovement"
+                style="@style/Widget.AppCompat.Button.Colored"
+                android:layout_width="250dp"
+                android:layout_height="200dp"
+                android:layout_marginStart="4dp"
+                android:layout_marginLeft="4dp"
+                android:layout_marginTop="8dp"
+                android:background="@android:color/holo_purple"
+                android:text="@string/Bevægelse"
+                android:textAppearance="@style/TextAppearance.AppCompat.Display2"
+                android:textSize="36sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/btnSound" />
+
+            <Button
+                android:id="@+id/btnMyStressFree"
+                style="@style/Widget.AppCompat.Button.Colored"
+                android:layout_width="250dp"
+                android:layout_height="200dp"
+                android:layout_marginStart="4dp"
+                android:layout_marginLeft="4dp"
+                android:layout_marginTop="8dp"
+                android:background="@android:color/holo_red_light"
+                android:text="@string/MitStressFri"
+                android:textAppearance="@style/TextAppearance.AppCompat.Display2"
+                android:textSize="36sp"
+                app:layout_constraintStart_toEndOf="@+id/btnMovement"
+                app:layout_constraintTop_toBottomOf="@+id/btnVideos" />
+        </TableRow>
+
+    </TableLayout>
+
+</android.support.constraint.ConstraintLayout>

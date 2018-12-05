@@ -12,6 +12,7 @@ import android.widget.GridView;
 import android.widget.Toast;
 
 import com.example.kristian.stressfree.R;
+import com.example.kristian.stressfree.Utilities.Globals;
 import com.example.kristian.stressfree.Utilities.ImageAdapter;
 import com.example.kristian.stressfree.Views.MyStressFreeActivity;
 import com.example.kristian.stressfree.Views.OptionsMenu;
@@ -31,31 +32,31 @@ import java.util.UUID;
 public class MyStressFreePresenter {
     private MyStressFreePresenter.Context view;
     private Activity activity;
-    private Uri filePath2;
     private String LOG = "MYSTRESSFREEPRESENTER";
     private final int PICK_IMAGE_REQUEST = 71;
-    final private String GETSHARED = "GETSHAREDSTRESSFREE";
+    private Globals globals;
+
+    private ArrayList<String> myPictureArray;
+
 
     public void setMyPictureArray(ArrayList<String> myPictureArray) {
         this.myPictureArray = myPictureArray;
     }
 
-    private ArrayList<String> myPictureArray;
-    private FirebaseAuth mAuth;
-
     // Firebase
-    FirebaseStorage storage;
-    StorageReference storageReference;
+    private FirebaseStorage storage;
+    private StorageReference storageReference;
 
     // Shared Preferences
-    SharedPreferences sp;
+    private SharedPreferences sp;
 
 
     public MyStressFreePresenter(MyStressFreeActivity view) {
         this.view = view;
         activity = (Activity) view;
-        mAuth = FirebaseAuth.getInstance();
         sp = activity.getPreferences(android.content.Context.MODE_PRIVATE);
+        globals = new Globals(view);
+
         // Firebase initializaion
         storage = FirebaseStorage.getInstance();
         storageReference = storage.getReference();
@@ -70,7 +71,7 @@ public class MyStressFreePresenter {
             progressdialog.show();
             final String uuid = UUID.randomUUID().toString();
 
-            final StorageReference ref = storageReference.child("MyStressFree/" + mAuth.getCurrentUser().getEmail() + "/" + uuid);
+            final StorageReference ref = storageReference.child("MyStressFree/" + globals.getEmail() + "/" + uuid);
             ref.putFile(view.getFilePath())
                     .addOnCompleteListener(new OnCompleteListener<UploadTask.TaskSnapshot>() {
                         @Override
@@ -81,7 +82,7 @@ public class MyStressFreePresenter {
                             } catch (Exception e) {
                                 Log.d(LOG, "onComplete: " + e);
                             }
-                            storageReference.child("MyStressFree/" + mAuth.getCurrentUser().getEmail() + "/" + uuid).getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
+                            storageReference.child("MyStressFree/" + globals.getEmail() + "/" + uuid).getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
                                 @Override
                                 public void onSuccess(Uri uri) {
                                     // Got the download URL for
@@ -148,7 +149,7 @@ public class MyStressFreePresenter {
             sb.append(s);
             sb.append(",");
         }
-        editor.putString(GETSHARED, sb.toString());
+        editor.putString(globals.getEmail(), sb.toString());
         editor.commit();
     }
 
@@ -158,9 +159,6 @@ public class MyStressFreePresenter {
         intent.setAction(Intent.ACTION_GET_CONTENT);
         activity.startActivityForResult(Intent.createChooser(intent, "Select Picture"), PICK_IMAGE_REQUEST);
     }
-
-
-
 
 
     // Interface to the methods in MyStressFree

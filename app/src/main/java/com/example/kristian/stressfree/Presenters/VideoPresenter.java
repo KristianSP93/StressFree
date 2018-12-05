@@ -23,13 +23,13 @@ public class VideoPresenter {
         animalList = new String[]{
                 "https://firebasestorage.googleapis.com/v0/b/stressfree-d7977.appspot.com/o/VideoAnimal%2FVideos%2FMonkey_video.mp4?alt=media&token=c494af0f-86d5-4f58-b454-37c16e754f7a",
                 "https://firebasestorage.googleapis.com/v0/b/stressfree-d7977.appspot.com/o/VideoAnimal%2FVideos%2FJellyfish_video.mp4?alt=media&token=62ce0965-7d38-4ccd-806a-f40807d6d66b",
-                "https://firebasestorage.googleapis.com/v0/b/stressfree-d7977.appspot.com/o/VideoAnimal%2FVideos%2FCampfire.mp4?alt=media&token=dc5cc388-aaf3-4b1c-9115-8e9a1614fe37"
+                //"https://firebasestorage.googleapis.com/v0/b/stressfree-d7977.appspot.com/o/VideoAnimal%2FVideos%2FCampfire.mp4?alt=media&token=dc5cc388-aaf3-4b1c-9115-8e9a1614fe37"
         };
 
         animalThumbnail = new String[]{
                 "https://firebasestorage.googleapis.com/v0/b/stressfree-d7977.appspot.com/o/VideoAnimal%2FThumbnails%2FMonkey_thumbnail.PNG?alt=media&token=5e981121-f616-409d-b8fe-c76676910c17",
                 "https://firebasestorage.googleapis.com/v0/b/stressfree-d7977.appspot.com/o/VideoAnimal%2FThumbnails%2FJellyfish_thumbnail.PNG?alt=media&token=11fc6b79-fefa-48fe-be64-18761d041ffa",
-                "https://firebasestorage.googleapis.com/v0/b/stressfree-d7977.appspot.com/o/VideoAnimal%2FThumbnails%2FJellyfish_thumbnail.PNG?alt=media&token=11fc6b79-fefa-48fe-be64-18761d041ffa"
+                //"https://firebasestorage.googleapis.com/v0/b/stressfree-d7977.appspot.com/o/VideoAnimal%2FThumbnails%2FJellyfish_thumbnail.PNG?alt=media&token=11fc6b79-fefa-48fe-be64-18761d041ffa"
         };
     }
 

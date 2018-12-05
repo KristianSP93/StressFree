@@ -64,7 +64,9 @@ public class CreateUserActivity extends AppCompatActivity implements CreateUserP
         createUser.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if (presenter.checkPassword(password1.getText().toString(), password2.getText().toString())) {
+                if(name.getText().toString().isEmpty() || email.getText().toString().isEmpty() || password1.getText().toString().isEmpty() || password2.getText().toString().isEmpty()){
+                    Toast.makeText(CreateUserActivity.this, getResources().getString(R.string.UdfyldAlt), Toast.LENGTH_LONG).show();
+                } else if (presenter.checkPassword(password1.getText().toString(), password2.getText().toString())) {
                     presenter.createAccount(email.getText().toString(), password1.getText().toString());
                 } else {
                     Toast.makeText(CreateUserActivity.this, getResources().getString(R.string.EnsKode),
