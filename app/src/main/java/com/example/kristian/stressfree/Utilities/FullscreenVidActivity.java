@@ -19,7 +19,7 @@ public class FullscreenVidActivity extends AppCompatActivity {
     private String stringUri;
     private VideoView videoView;
     private MediaController mediaController;
-    private ProgressDialog progDailog;
+    private ProgressDialog progDialog;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -41,12 +41,12 @@ public class FullscreenVidActivity extends AppCompatActivity {
         videoView.setMediaController(mediaController);
         mediaController.setAnchorView(videoView);
 
-        progDailog = ProgressDialog.show(this, getResources().getString(R.string.VentVenligst), getResources().getString(R.string.HenterData), true);
+        progDialog = ProgressDialog.show(this, getResources().getString(R.string.VentVenligst), getResources().getString(R.string.HenterData), true);
 
         videoView.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
 
             public void onPrepared(MediaPlayer mp) {
-                progDailog.dismiss();
+                progDialog.dismiss();
                 videoView.start();
             }
         });

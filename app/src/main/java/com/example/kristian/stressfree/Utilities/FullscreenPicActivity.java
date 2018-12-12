@@ -30,6 +30,10 @@ public class FullscreenPicActivity extends AppCompatActivity {
         Intent callingActivityIntent = getIntent();
         uri = callingActivityIntent.getStringExtra("picURI");
 
+        showImage();
+    }
+
+    public void showImage(){
         try {
             Glide.with(this)
                     .load(uri)
@@ -38,6 +42,8 @@ public class FullscreenPicActivity extends AppCompatActivity {
             Toast.makeText(this, R.string.Netværksfejl + ": " + e, Toast.LENGTH_LONG).show();
         }
     }
+
+
 }
 
 

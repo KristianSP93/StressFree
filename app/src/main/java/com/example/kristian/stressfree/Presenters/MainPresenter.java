@@ -5,11 +5,8 @@ import com.google.firebase.auth.FirebaseAuth;
 
 public class MainPresenter {
 
-
     private MainPresenter.Context view;
-
     private FirebaseAuth mAuth;
-    private String MAINPRESENTER = "SETTINGS PRESENTER";
 
     // Constructor
     public MainPresenter(MainPresenter.Context view) {

@@ -13,15 +13,17 @@ import android.content.res.Resources;
 public class MovementPresenter extends Application {
     private MovementPresenter.Context view;
     public static Context context;
-    Activity activity;
-
+    private Activity activity;
     private ArrayList<Exercise> exerciseListLow, exerciseListMedium, exerciseListHigh;
+
     // Constructor
     public MovementPresenter(MovementPresenter.Context view) {
         this.view = view;
         activity = (Activity) view;
+        CreateLists();
+    }
 
-
+    private void CreateLists(){
         exerciseListLow = new ArrayList<>();
         exerciseListLow.add(new Exercise(activity.getResources().getString(R.string.GåPåStedet),activity.getResources().getString(R.string.GåPåStedet_beskrivelse),1));
         exerciseListLow.add(new Exercise(activity.getResources().getString(R.string.GåEnTur), activity.getResources().getString(R.string.GåEnTur_beskrivelse),1));
@@ -40,7 +42,6 @@ public class MovementPresenter extends Application {
         exerciseListHigh.add(new Exercise(activity.getResources().getString(R.string.armbøjninger50),activity.getResources().getString(R.string.armbøjninger50_beskrivelse),3));
         exerciseListHigh.add(new Exercise(activity.getResources().getString(R.string.Løb5km),activity.getResources().getString(R.string.Løb5km_beskrivelse),3));
         exerciseListHigh.add(new Exercise(activity.getResources().getString(R.string.Løb10km),activity.getResources().getString(R.string.Løb10km_beskrivelse),3));
-
     }
 
     public ArrayList<Exercise> getExerciseListLow() {

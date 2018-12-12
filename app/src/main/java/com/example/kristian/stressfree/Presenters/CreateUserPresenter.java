@@ -13,25 +13,14 @@ import com.google.firebase.auth.UserProfileChangeRequest;
 
 public class CreateUserPresenter {
 
-    private User user;
     private Context view;
-
     private FirebaseAuth mAuth;
-    private String CREATEUSERPRESENTER = "CREATE USER PRESENTER";
+    private final String CREATEUSERPRESENTER = "CREATE USER PRESENTER";
 
     public CreateUserPresenter(Context view) {
-        this.user = new User();
         this.view = view;
         mAuth = FirebaseAuth.getInstance();
     }
-
-    // Creates the user with all the information from the fields in the activity.
-    public void createUser(String name, String email, String password) {
-        user.setName(name);
-        user.setEmail(email);
-        user.setPassword(password);
-    }
-
 
     public boolean checkPassword(String p1, String p2) {
         return p1.equals(p2);

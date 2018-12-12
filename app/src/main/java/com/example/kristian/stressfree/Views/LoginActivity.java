@@ -112,10 +112,6 @@ public class LoginActivity extends AppCompatActivity implements LoginPresenter.C
                 Toast.LENGTH_SHORT).show();
     }
 
-    public String getMail(){
-        return email.getText().toString();
-    }
-
 
     @Override
     public void onSaveInstanceState(Bundle outState) {

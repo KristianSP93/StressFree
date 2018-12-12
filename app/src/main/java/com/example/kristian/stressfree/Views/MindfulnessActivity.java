@@ -28,8 +28,8 @@ public class MindfulnessActivity extends OptionsMenu implements MindfulnessPrese
         setContentView(R.layout.activity_mindfulness);
         presenter = new MindfulnessPresenter(this);
 
-        mindfulnessList = presenter.getMindfullList();
-        mindfulnessThumbnail = presenter.getMindfullThumbnail();
+        mindfulnessList = presenter.getMindfulList();
+        mindfulnessThumbnail = presenter.getMindfulThumbnail();
 
         gridView = findViewById(R.id.gridViewMindful);
         gridView.setAdapter(new ImageAdapter(MindfulnessActivity.this, mindfulnessThumbnail));

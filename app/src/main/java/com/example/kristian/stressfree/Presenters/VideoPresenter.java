@@ -10,6 +10,10 @@ public class VideoPresenter {
     public VideoPresenter(VideoActivity view){
         this.view = view;
 
+        CreateLists();
+    }
+
+    private void CreateLists(){
         natureList = new String[]{
                 "https://firebasestorage.googleapis.com/v0/b/stressfree-d7977.appspot.com/o/VideoNature%2FVideos%2FForest_video.mov?alt=media&token=8d031179-0d13-469c-a9b3-0f48d9e0d15c",
                 "https://firebasestorage.googleapis.com/v0/b/stressfree-d7977.appspot.com/o/VideoNature%2FVideos%2FWaterfall_video.mp4?alt=media&token=f86b77b0-ccbb-4ad2-9375-321fd4d7abca"

@@ -35,13 +35,7 @@ public class MyStressFreePresenter {
     private String LOG = "MYSTRESSFREEPRESENTER";
     private final int PICK_IMAGE_REQUEST = 71;
     private Globals globals;
-
     private ArrayList<String> myPictureArray;
-
-
-    public void setMyPictureArray(ArrayList<String> myPictureArray) {
-        this.myPictureArray = myPictureArray;
-    }
 
     // Firebase
     private FirebaseStorage storage;
@@ -49,7 +43,6 @@ public class MyStressFreePresenter {
 
     // Shared Preferences
     private SharedPreferences sp;
-
 
     public MyStressFreePresenter(MyStressFreeActivity view) {
         this.view = view;
@@ -60,6 +53,11 @@ public class MyStressFreePresenter {
         // Firebase initializaion
         storage = FirebaseStorage.getInstance();
         storageReference = storage.getReference();
+    }
+
+
+    public void setMyPictureArray(ArrayList<String> myPictureArray) {
+        this.myPictureArray = myPictureArray;
     }
 
 

@@ -9,9 +9,7 @@ public class SettingsPresenter {
 
     private User user;
     private SettingsPresenter.Context view;
-
     private FirebaseAuth mAuth;
-    private String SETTINGSPRESENTER = "SETTINGS PRESENTER";
 
     public SettingsPresenter(SettingsPresenter.Context view) {
         this.user = new User();

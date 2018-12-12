@@ -18,16 +18,13 @@ import com.google.firebase.auth.FirebaseUser;
 
 public class LoginPresenter {
 
-    private User user;
     private Context view;
     private String forgot_password = "";
     private Activity activity;
-
     private FirebaseAuth mAuth;
-    private String LOGINPRESENTER = "LOG IN PRESENTER";
+    private final String LOGINPRESENTER = "LOG IN PRESENTER";
 
     public LoginPresenter(Context view) {
-        this.user = new User();
         this.view = view;
         activity = (Activity) view;
 
@@ -117,6 +114,5 @@ public class LoginPresenter {
 
         void GoMainactivitWithoutLogin();
 
-        String getMail();
     }
 }

@@ -5,17 +5,17 @@ import com.example.kristian.stressfree.Views.MindfulnessActivity;
 public class MindfulnessPresenter {
 
     private MindfulnessPresenter.Context view;
-    private String[] mindfullList, mindfullThumbnail;
+    private String[] mindfulList, mindfulThumbnail;
 
     public MindfulnessPresenter(MindfulnessActivity view){
         this.view = view;
 
-        mindfullList = new String[]{
+        mindfulList = new String[]{
                 "https://firebasestorage.googleapis.com/v0/b/stressfree-d7977.appspot.com/o/Mindfulness%2FSound%2FMindfulnessTest1.mp4?alt=media&token=367bda25-6950-4253-81d5-43da1857490b",
                 "https://firebasestorage.googleapis.com/v0/b/stressfree-d7977.appspot.com/o/Mindfulness%2FSound%2FMindfulnessTest2.mp4?alt=media&token=1c21af72-c7b2-40ae-8ac1-5d14b012719d"
         };
 
-        mindfullThumbnail = new String[]{
+        mindfulThumbnail = new String[]{
                 "https://firebasestorage.googleapis.com/v0/b/stressfree-d7977.appspot.com/o/Mindfulness%2FThumbnails%2Fmindful_1.PNG?alt=media&token=56c65fbb-fa0f-454f-8c30-467a494079cd",
                 "https://firebasestorage.googleapis.com/v0/b/stressfree-d7977.appspot.com/o/Mindfulness%2FThumbnails%2Fmindful_2.PNG?alt=media&token=ed057101-2113-40fd-95e3-f925a305668a"
                 //,
@@ -26,12 +26,12 @@ public class MindfulnessPresenter {
 
     }
 
-    public String[] getMindfullList() {
-        return mindfullList;
+    public String[] getMindfulList() {
+        return mindfulList;
     }
 
-    public String[] getMindfullThumbnail() {
-        return mindfullThumbnail;
+    public String[] getMindfulThumbnail() {
+        return mindfulThumbnail;
     }
 
     // Interface to the methods in MyStressFree

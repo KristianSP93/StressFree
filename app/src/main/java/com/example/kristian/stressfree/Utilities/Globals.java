@@ -14,7 +14,7 @@ import com.google.firebase.auth.FirebaseAuth;
 public class Globals {
 
     private FirebaseAuth mAuth;
-    Context mContext;
+    private Context mContext;
 
     // constructor
     public Globals(Context context) {
@@ -60,6 +60,7 @@ public class Globals {
     public void LogOut() {
         mAuth.signOut();
     }
+
 
     // Check if there is currently a user logged in
     public Boolean IsUserLoggedIn(){

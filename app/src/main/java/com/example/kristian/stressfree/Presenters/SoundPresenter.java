@@ -44,6 +44,11 @@ public class SoundPresenter {
         //this.view = view;
         this.activity = view;
 
+        CreateLists();
+    }
+
+
+    private void CreateLists() {
         natureList = new String[]{
                 "https://firebasestorage.googleapis.com/v0/b/stressfree-d7977.appspot.com/o/SoundNature%2FNatureSounds%2F1.mp4?alt=media&token=2551058f-2c3d-4fa7-baa1-8f294764990f",
                 "https://firebasestorage.googleapis.com/v0/b/stressfree-d7977.appspot.com/o/SoundNature%2FNatureSounds%2F2.mp4?alt=media&token=11830c5e-90f8-43ae-ab61-9728b38d714d",
@@ -81,49 +86,7 @@ public class SoundPresenter {
         };
     }
 
-
-
-
-
-    /*
-    private MediaPlayer mMediaplayer;
-
-
-        mMediaplayer = new MediaPlayer();
-        mMediaplayer.setAudioStreamType(AudioManager.STREAM_MUSIC);
-        fetchAudioFromFirebase();
-
-
-    private void fetchAudioFromFirebase(){
-        final FirebaseStorage storage = FirebaseStorage.getInstance();
-
-        StorageReference storageRef = storage.getReferenceFromUrl("https://firebasestorage.googleapis.com/v0/b/stressfree-d7977.appspot.com/o/SoundMusic%2FAkon%20-%20Smack%20That%20ft.%20Eminem.mp3?alt=media&token=e5dc5a38-586f-4eae-a2c0-89bddbbf7be6");
-        storageRef.getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
-            @Override
-            public void onSuccess(Uri uri) {
-                try {
-                    final String url = uri.toString();
-                    mMediaplayer.setDataSource(url);
-                    mMediaplayer.setOnPreparedListener(SoundActivity.class);
-                    mMediaplayer.prepareAsync();
-                }
-                catch (IOException e){
-                    e.printStackTrace();
-                }
-            }
-        })
-                .addOnFailureListener(new OnFailureListener() {
-                    @Override
-                    public void onFailure(@NonNull Exception e) {
-                        Log.i("TAG", e.getMessage());
-                    }
-                });
-
-    }
-    */
-
-
-    public interface Context{
+    public interface Context {
 
     }
 
